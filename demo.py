@@ -41,7 +41,7 @@ if config.clipforge.enable:
     print('clip_feat', clip_feat.shape)
 else:
     clip_feat = None
-output = lion.sample(1 if clip_feat is None else clip_feat.shape[0], clip_feat=clip_feat)
+output = lion.sample(10 if clip_feat is None else clip_feat.shape[0], clip_feat=clip_feat)
 pts = output['points']
 img_name = "demo.png"
 plot_points(pts, output_name=img_name)
