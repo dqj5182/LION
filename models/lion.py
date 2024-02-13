@@ -9,7 +9,7 @@ from models.vae_adain import Model as VAE
 from models.latent_points_ada_localprior import PVCNN2Prior as LocalPrior
 from utils.diffusion_pvd import DiffusionDiscretized
 from utils.model_helper import import_model
-from diffusers import DDPMScheduler #, DDIMScheduler
+from diffusers import DDPMScheduler, DDIMScheduler
 import torch
 
 class LION(object):
