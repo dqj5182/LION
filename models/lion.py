@@ -8,11 +8,9 @@
 from models.vae_adain import Model as VAE
 from models.latent_points_ada_localprior import PVCNN2Prior as LocalPrior
 from utils.diffusion_pvd import DiffusionDiscretized
-from utils.vis_helper import plot_points
 from utils.model_helper import import_model
-from diffusers import DDPMScheduler
+from diffusers import DDPMScheduler #, DDIMScheduler
 import torch
-from matplotlib import pyplot as plt
 
 class LION(object):
     def __init__(self, cfg):
@@ -21,9 +19,15 @@ class LION(object):
         global_prior = GlobalPrior(cfg.sde, cfg.latent_pts.style_dim, cfg).cuda()
         local_prior = LocalPrior(cfg.sde, cfg.shapelatent.latent_dim, cfg).cuda()
         self.priors = torch.nn.ModuleList([global_prior, local_prior])
-        self.scheduler = DDPMScheduler(clip_sample=False,
-                                       beta_start=cfg.ddpm.beta_1, beta_end=cfg.ddpm.beta_T, beta_schedule=cfg.ddpm.sched_mode,
-                                       num_train_timesteps=cfg.ddpm.num_steps, variance_type=cfg.ddpm.model_var_type)
+        self.sampling_technique = 'ddim' # 'ddpm' or 'ddim'
+        if self.sampling_technique == 'ddpm':
+            self.scheduler = DDPMScheduler(clip_sample=False,
+                                        beta_start=cfg.ddpm.beta_1, beta_end=cfg.ddpm.beta_T, beta_schedule=cfg.ddpm.sched_mode,
+                                        num_train_timesteps=cfg.ddpm.num_steps, variance_type=cfg.ddpm.model_var_type)
+        elif self.sampling_technique == 'ddim':
+            self.scheduler = DDIMScheduler(clip_sample=False,
+                                        beta_start=cfg.ddpm.beta_1, beta_end=cfg.ddpm.beta_T, beta_schedule=cfg.ddpm.sched_mode,
+                                        num_train_timesteps=cfg.ddpm.num_steps)
         self.diffusion = DiffusionDiscretized(None, None, cfg)
         # self.load_model(cfg)
 
@@ -36,7 +40,10 @@ class LION(object):
 
     @torch.no_grad()
     def sample(self, num_samples=10, clip_feat=None, save_img=False):
-        self.scheduler.set_timesteps(1000, device='cuda')
+        if self.sampling_technique == 'ddpm':
+            self.scheduler.set_timesteps(1000, device='cuda')
+        elif self.sampling_technique == 'ddim':
+            self.scheduler.set_timesteps(25, device='cuda')
         timesteps = self.scheduler.timesteps
         latent_shape = self.vae.latent_shape()
         global_prior, local_prior = self.priors[0], self.priors[1]
@@ -73,19 +80,19 @@ class LION(object):
 
         # decode the latent
         output = self.vae.sample(num_samples=num_samples, decomposed_eps=sampled_list)
-        if save_img:
-            out_name = plot_points(output, "/tmp/tmp.png")
-            print(f'INFO save plot image at {out_name}')
+        # if save_img:
+        #     out_name = plot_points(output, "tmp.png")
+        #     print(f'INFO save plot image at {out_name}')
         output_dict['points'] = output
         return output_dict
 
-    def get_mixing_component(self, noise_pred, t):
-        # usage:
-        # if global_prior.mixed_prediction:
-        #     mixing_component = self.get_mixing_component(noise_pred, t)
-        #     coeff = torch.sigmoid(global_prior.mixing_logit)
-        #     noise_pred = (1 - coeff) * mixing_component + coeff * noise_pred
+    # def get_mixing_component(self, noise_pred, t):
+    #     # usage:
+    #     # if global_prior.mixed_prediction:
+    #     #     mixing_component = self.get_mixing_component(noise_pred, t)
+    #     #     coeff = torch.sigmoid(global_prior.mixing_logit)
+    #     #     noise_pred = (1 - coeff) * mixing_component + coeff * noise_pred
 
-        alpha_bar = self.scheduler.alphas_cumprod[t]
-        one_minus_alpha_bars_sqrt = np.sqrt(1.0 - alpha_bar)
-        return noise_pred * one_minus_alpha_bars_sqrt
+    #     alpha_bar = self.scheduler.alphas_cumprod[t]
+    #     one_minus_alpha_bars_sqrt = np.sqrt(1.0 - alpha_bar)
+    #     return noise_pred * one_minus_alpha_bars_sqrt
