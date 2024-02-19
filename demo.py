@@ -1,15 +1,3 @@
-# Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-#
-# NVIDIA CORPORATION & AFFILIATES and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION & AFFILIATES is strictly prohibited.
-
-"""
-    require diffusers-0.11.1
-"""
-import os
 import clip
 import time
 import torch
@@ -51,7 +39,6 @@ else:
 
 start_time = time.time()
 if 'vae_only' in model_path:
-    # decomposed_eps = [torch.rand(num_sample, 128, 1, 1), torch.rand(num_sample, 8192, 1, 1)] # [0]: global prior, [1]: local prior
     output = lion.sample(num_sample)
     pts = output
 else:

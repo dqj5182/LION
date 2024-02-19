@@ -1,10 +1,3 @@
-# Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-#
-# NVIDIA CORPORATION & AFFILIATES and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION & AFFILIATES is strictly prohibited.
 from models.vae_adain import Model as VAE
 from models.latent_points_ada_localprior import PVCNN2Prior as LocalPrior
 from utils.diffusion_pvd import DiffusionDiscretized
@@ -29,10 +22,8 @@ class LION(object):
                                         beta_start=cfg.ddpm.beta_1, beta_end=cfg.ddpm.beta_T, beta_schedule=cfg.ddpm.sched_mode,
                                         num_train_timesteps=cfg.ddpm.num_steps)
         self.diffusion = DiffusionDiscretized(None, None, cfg)
-        # self.load_model(cfg)
 
     def load_model(self, model_path):
-        # model_path = cfg.ckpt.path
         ckpt = torch.load(model_path)
         self.priors.load_state_dict(ckpt['dae_state_dict'])
         self.vae.load_state_dict(ckpt['vae_state_dict'])
@@ -80,19 +71,5 @@ class LION(object):
 
         # decode the latent
         output = self.vae.sample(num_samples=num_samples, decomposed_eps=sampled_list)
-        # if save_img:
-        #     out_name = plot_points(output, "tmp.png")
-        #     print(f'INFO save plot image at {out_name}')
         output_dict['points'] = output
         return output_dict
-
-    # def get_mixing_component(self, noise_pred, t):
-    #     # usage:
-    #     # if global_prior.mixed_prediction:
-    #     #     mixing_component = self.get_mixing_component(noise_pred, t)
-    #     #     coeff = torch.sigmoid(global_prior.mixing_logit)
-    #     #     noise_pred = (1 - coeff) * mixing_component + coeff * noise_pred
-
-    #     alpha_bar = self.scheduler.alphas_cumprod[t]
-    #     one_minus_alpha_bars_sqrt = np.sqrt(1.0 - alpha_bar)
-    #     return noise_pred * one_minus_alpha_bars_sqrt

@@ -1,19 +1,7 @@
-# ---------------------------------------------------------------
-# Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-#
-# NVIDIA CORPORATION & AFFILIATES and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION & AFFILIATES is strictly prohibited.
-# ---------------------------------------------------------------
-
 import importlib
 import argparse
 from loguru import logger
-from comet_ml import Experiment
 import torch
-import numpy as np
 import os
 import sys
 import torch.distributed as dist
@@ -97,20 +85,12 @@ def main(args, config):
             trainer.eval_sample(trainer.step)
         logger.info('done')
 
-    # make all nodes wait for rank 0 to finish saving the files
-    # if args.distributed:
-    #    dist.barrier()
-
 
 def get_args():
     parser = argparse.ArgumentParser('encoder decoder examiner')
     # experimental results
     parser.add_argument('--exp_root', type=str, default='../exp',
                         help='location of the results')
-    # parser.add_argument('--save', type=str, default='exp',
-    #                     help='id used for storing intermediate results')
-    # parser.add_argument('--recont_with_local_prior', type=bool, default=False,
-    #                    help='eval nll with local prior sampled from normal distribution')
     parser.add_argument('--skip_sample', type=int, default=0,
                         help='only eval nll, no sampling')
     parser.add_argument('--skip_nll', type=int, default=0,
@@ -248,6 +228,3 @@ if __name__ == '__main__':
         args.global_size = 1
         utils.init_processes(0, size, main, args, config)
     logger.info('should end now')
-    # if args.distributed:
-    #    logger.info('destroy_process_group')
-    #    dist.destroy_process_group()
