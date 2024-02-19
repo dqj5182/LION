@@ -9,8 +9,6 @@ import sys, os, subprocess
 import OpenEXR
 import Imath
 from PIL import Image
-from plyfile import PlyData, PlyElement
-import torch 
 from PIL import Image, ImageChops
 import time 
 random_str = hex(int(time.time() + 12345))[2:] 

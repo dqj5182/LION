@@ -270,10 +270,6 @@ def compute_score(output_name, ref_name, batch_size_test=256, device_str='cuda',
             exp = exp
         elif writer is not None:
             exp = writer.exp
-        elif os.path.exists('.comet_api'):
-            comet_args = json.load(open('.comet_api', 'r'))
-            exp = Experiment(display_summary_level=0,
-                            **comet_args)
         else:
             exp = OfflineExperiment(offline_directory="/tmp")
         img_list = []
@@ -323,17 +319,9 @@ def compute_score(output_name, ref_name, batch_size_test=256, device_str='cuda',
     jsd = jsd_between_point_cloud_sets(
         gen_pcs.cpu().numpy(), ref_pcs.cpu().numpy())
     results['jsd'] = jsd
-    msg = print_results(results, **print_kwargs)
-    # with open('../exp/eval_out.txt', 'a') as f:
-    #     run_time = time.strftime('%m%d-%H%M-%S')
-    #     f.write('<< date: %s >>\n' % run_time)
-    #     f.write('%s\n%s\n' % (exp.url, msg))
     results['url'] = exp.url
     if not skip_write:
         os.makedirs('results', exist_ok=True)
-        msg = write_results(
-            os.path.join('./results/', 'eval_out.csv'),
-            results, **print_kwargs)
     if metric2 is None:
         logger.info('early exit')
         exit()

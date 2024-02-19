@@ -12,7 +12,6 @@ import open3d as o3d
 import sys
 import torch 
 import point_cloud_utils as pcu
-from PIL import Image 
 
 sys.path.append('.')
 import torch  
@@ -37,7 +36,6 @@ def reformat_ply(input, output, r=0, is_point_flow_data=0,
     R = m.get_rotation_matrix_from_xyz((0, 0, - r * np.pi / 2))
     mesh_r = copy.deepcopy(m)
     mesh_r.rotate(R, center=(0, 0, 0))
-    ## o3d.visualization.draw_geometries([mesh_r])
     open3d.io.write_triangle_mesh(output, mesh_r, write_ascii=ascii, write_vertex_normals=False) 
     if fixed_trimesh:
         mesh = trimesh.load_mesh(output) ## '../models/featuretype.STL') 
@@ -93,8 +91,6 @@ def convert_cube_2_mesh(voxel_size, center_list, output_path, overwrite=0, color
     out = render_cubes2png(pcl=center_list, filename=output_name, 
             vs_size=0.9*voxel_size/scale, colorm=colorm, **config) 
     print(' save as: ', out) 
-    #img = Image.open(out)
-    #img.show()
     print('output_path: ', output_path)
     return out 
 
@@ -115,13 +111,11 @@ def write_small_cube():
     mesh_compare = './script/paper/vis_voxel_exp/unit_cube2.ply'
     m = o3d.io.read_triangle_mesh(mesh_compare)
     pcl = np.asarray(m.vertices) * 0.5  
-    m.vertices = o3d.utility.Vector3dVector(pcl) ##.float()) ## torch.from_numpy(pcl))
+    m.vertices = o3d.utility.Vector3dVector(pcl)
     o3d.io.write_triangle_mesh(mesh_compare.replace('.ply', 'w1.ply'), 
             m, write_ascii=True, write_vertex_normals=True) 
 
-# write_small_cube()
 if __name__ == '__main__':
     input_path = '/home/xzeng/plots/voxel_exp/voxel_cube/raw'
     index = "3 328 91 83 74 73 64 63 54 51 48 45 41 30 22"
     convert_cube_2_mesh(input_path, index)
-# create_unit_cube() 

@@ -154,16 +154,6 @@ class Prior(nn.Module):
             logger.info('init-mixing_logit = {}, after sigmoid = {}',
                         args.mixing_logit_init, torch.sigmoid(torch.tensor(args.mixing_logit_init)))
             assert(args.mixing_logit_init), f'require learning'
-            # if not args.learn_mixing_logit and args.hypara_mixing_logit:
-            #    # not learn, treat it as hyparameters
-            #    init = args.mixing_logit_init * torch.ones(size=[1, num_input_channels, 1, 1])
-            #    self.mixing_logit = torch.nn.Parameter(init, requires_grad=False) # not update
-            #    self.is_active = None
-            # elif not args.learn_mixing_logit: # not learn, loaded from c04cd1h exp
-            #    init = torch.load('../exp/1110/chair/c04cd1h_hvae3s_390f8dhInitSepesTrainvae0_hvaeB72l1E4W1/mlogit.pt')
-            #    self.mixing_logit = torch.nn.Parameter(init, requires_grad=False)
-            #    self.is_active = None
-            # else:
             if True:
                 init = args.mixing_logit_init * torch.ones(size=[1, num_input_channels, 1, 1])
                 self.mixing_logit = torch.nn.Parameter(init, requires_grad=True)

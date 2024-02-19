@@ -41,16 +41,16 @@ class Trainer(BaseTrainer):
             data_loader = self.test_loader 
         tag_cur = self.cfg.voxel2pts.diffusion_steps[0]
         if 'chair'  in self.cfg.data.cates:
-            input_pts = '../exp/0404/nschair/60eeeah_train_l2e-4E4k_vae_adainB5l1E3W8/eval/samples_1415999s1Ha1104diet.pt'
-            output_dir_template = '../exp/0404/nschair/60eeeah_train_l2e-4E4k_vae_adainB5l1E3W8/eval/samplesmm_unorm_D%d/%04d/'  
+            input_pts = 'exp/0404/nschair/60eeeah_train_l2e-4E4k_vae_adainB5l1E3W8/eval/samples_1415999s1Ha1104diet.pt'
+            output_dir_template = 'exp/0404/nschair/60eeeah_train_l2e-4E4k_vae_adainB5l1E3W8/eval/samplesmm_unorm_D%d/%04d/'  
             index_select = [137] ##, 421, 690] 
         elif 'car' in self.cfg.data.cates:
-            input_pts = '../exp/0417/nscar/94d09ch_train_l2e-4_vae_adainB20l1E3W8/eval/samples_511999s1Hd2edfdiet.pt'
-            output_dir_template = '../exp/0417/nscar/94d09ch_train_l2e-4_vae_adainB20l1E3W8/eval/samplesmm_unorm_D%d/%04d/' 
+            input_pts = 'exp/0417/nscar/94d09ch_train_l2e-4_vae_adainB20l1E3W8/eval/samples_511999s1Hd2edfdiet.pt'
+            output_dir_template = 'exp/0417/nscar/94d09ch_train_l2e-4_vae_adainB20l1E3W8/eval/samplesmm_unorm_D%d/%04d/' 
             index_select = [534, 579, 147]
         elif 'airplane' in self.cfg.data.cates:
-            input_pts = '../exp/0428/nsairplane/8c3930h_train_l2e-4_vae_adainB20l1E3W8/eval/samples_305999s1Hd2edfdiet.pt' 
-            output_dir_template = '../exp/0428/nsairplane/8c3930h_train_l2e-4_vae_adainB20l1E3W8/eval/sampesmm_unorm_D%d/%04d/'
+            input_pts = 'exp/0428/nsairplane/8c3930h_train_l2e-4_vae_adainB20l1E3W8/eval/samples_305999s1Hd2edfdiet.pt' 
+            output_dir_template = 'exp/0428/nsairplane/8c3930h_train_l2e-4_vae_adainB20l1E3W8/eval/sampesmm_unorm_D%d/%04d/'
             index_select = [72, 59, 47]
         else:
             raise ValueError 

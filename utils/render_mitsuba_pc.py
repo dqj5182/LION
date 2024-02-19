@@ -1,27 +1,17 @@
-# Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-#
-# NVIDIA CORPORATION & AFFILIATES and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION & AFFILIATES is strictly prohibited.
-
 import numpy as np
 import mitsuba as mi 
 mi.set_variant("cuda_ad_rgb")
 from loguru import logger
-import sys, os, subprocess
-import copy
+import sys, os
 import OpenEXR
 import Imath
 from PIL import Image
-## from plyfile import PlyData, PlyElement
 import torch 
 import open3d as o3d 
 from PIL import Image, ImageChops
 import time 
 random_str = hex(int(time.time() + 12345))[2:] 
-PATH_TO_MITSUBA2 = "/home/xzeng/code/mitsuba2/build/dist/mitsuba" ## Codes/mitsuba2/build/dist/mitsuba"  # mitsuba exectuable
+PATH_TO_MITSUBA2 = "/home/xzeng/code/mitsuba2/build/dist/mitsuba"
 
 # replaced by command line arguments
 def standardize_bbox_based_on(pcl, eps):

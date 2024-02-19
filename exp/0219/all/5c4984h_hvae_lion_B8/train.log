@@ -1,0 +1,591 @@
+2024-02-19 07:29:57.206 | INFO     | __main__:get_args:186 - EXP_ROOT: exp + exp name: 0219/all/5c4984h_hvae_lion_B8, save dir: exp/0219/all/5c4984h_hvae_lion_B8
+2024-02-19 07:29:57.221 | INFO     | __main__:get_args:191 - save config at exp/0219/all/5c4984h_hvae_lion_B8/cfg.yml
+2024-02-19 07:29:57.221 | INFO     | __main__:get_args:194 - log dir: exp/0219/all/5c4984h_hvae_lion_B8
+2024-02-19 07:29:57.221 | INFO     | __main__:<module>:208 - In Rank=0
+2024-02-19 07:29:57.221 | INFO     | __main__:<module>:214 - Node rank 0, local proc 0, global proc 0
+2024-02-19 07:29:57.230 | INFO     | __main__:<module>:208 - In Rank=1
+2024-02-19 07:29:57.231 | INFO     | __main__:<module>:214 - Node rank 0, local proc 1, global proc 1
+2024-02-19 07:29:57.233 | INFO     | utils.utils:init_processes:1103 - set MASTER_PORT: 127.0.0.1, MASTER_PORT: 6020
+2024-02-19 07:29:57.234 | INFO     | utils.utils:init_processes:1124 - init_process: rank=0, world_size=4
+2024-02-19 07:29:57.239 | INFO     | __main__:<module>:208 - In Rank=2
+2024-02-19 07:29:57.240 | INFO     | __main__:<module>:214 - Node rank 0, local proc 2, global proc 2
+2024-02-19 07:29:57.240 | INFO     | utils.utils:init_processes:1103 - set MASTER_PORT: 127.0.0.1, MASTER_PORT: 6020
+2024-02-19 07:29:57.241 | INFO     | utils.utils:init_processes:1124 - init_process: rank=1, world_size=4
+2024-02-19 07:29:57.245 | INFO     | __main__:<module>:208 - In Rank=3
+2024-02-19 07:29:57.245 | INFO     | __main__:<module>:214 - Node rank 0, local proc 3, global proc 3
+2024-02-19 07:29:57.247 | INFO     | utils.utils:init_processes:1103 - set MASTER_PORT: 127.0.0.1, MASTER_PORT: 6020
+2024-02-19 07:29:57.248 | INFO     | utils.utils:init_processes:1124 - init_process: rank=2, world_size=4
+2024-02-19 07:29:57.250 | INFO     | __main__:<module>:222 - join 3
+2024-02-19 07:29:57.253 | INFO     | utils.utils:init_processes:1103 - set MASTER_PORT: 127.0.0.1, MASTER_PORT: 6020
+2024-02-19 07:29:57.254 | INFO     | utils.utils:init_processes:1124 - init_process: rank=3, world_size=4
+2024-02-19 07:29:57.552 | INFO     | __main__:main:16 - use trainer: trainers.hvae_trainer
+2024-02-19 07:29:57.557 | INFO     | __main__:main:16 - use trainer: trainers.hvae_trainer
+2024-02-19 07:29:57.560 | INFO     | __main__:main:16 - use trainer: trainers.hvae_trainer
+2024-02-19 07:29:57.562 | INFO     | __main__:main:16 - use trainer: trainers.hvae_trainer
+2024-02-19 07:29:59.155 | INFO     | utils.utils:common_init:464 - [common-init] at rank=0, seed=1
+2024-02-19 07:29:59.156 | INFO     | utils.utils:__init__:329 - Not init TFB
+2024-02-19 07:29:59.156 | INFO     | utils.utils:common_init:481 - [common-init] DONE
+2024-02-19 07:29:59.177 | INFO     | utils.utils:common_init:464 - [common-init] at rank=1, seed=1
+2024-02-19 07:29:59.178 | INFO     | utils.utils:__init__:337 - rank=1, init writer as a blackhole
+2024-02-19 07:29:59.178 | INFO     | utils.utils:common_init:481 - [common-init] DONE
+2024-02-19 07:29:59.178 | INFO     | utils.utils:common_init:464 - [common-init] at rank=3, seed=1
+2024-02-19 07:29:59.180 | INFO     | utils.utils:__init__:337 - rank=3, init writer as a blackhole
+2024-02-19 07:29:59.180 | INFO     | utils.utils:common_init:481 - [common-init] DONE
+2024-02-19 07:29:59.229 | INFO     | utils.utils:common_init:464 - [common-init] at rank=2, seed=1
+2024-02-19 07:29:59.231 | INFO     | utils.utils:__init__:337 - rank=2, init writer as a blackhole
+2024-02-19 07:29:59.231 | INFO     | utils.utils:common_init:481 - [common-init] DONE
+2024-02-19 07:30:02.623 | INFO     | utils.model_helper:import_model:105 - import: models.shapelatent_modules.PointNetPlusEncoder
+2024-02-19 07:30:02.624 | INFO     | utils.model_helper:import_model:105 - import: models.shapelatent_modules.PointNetPlusEncoder
+2024-02-19 07:30:02.624 | INFO     | utils.model_helper:import_model:105 - import: models.shapelatent_modules.PointNetPlusEncoder
+2024-02-19 07:30:02.626 | INFO     | utils.model_helper:import_model:105 - import: models.shapelatent_modules.PointNetPlusEncoder
+2024-02-19 07:30:02.634 | INFO     | models.shapelatent_modules:__init__:29 - [Encoder] zdim=128, out_sigma=True; force_att: 0
+2024-02-19 07:30:02.634 | INFO     | utils.model_helper:import_model:105 - import: models.latent_points_ada.PointTransPVC
+2024-02-19 07:30:02.635 | INFO     | models.shapelatent_modules:__init__:29 - [Encoder] zdim=128, out_sigma=True; force_att: 0
+2024-02-19 07:30:02.635 | INFO     | utils.model_helper:import_model:105 - import: models.latent_points_ada.PointTransPVC
+2024-02-19 07:30:02.636 | INFO     | models.latent_points_ada:__init__:38 - [Build Unet] extra_feature_channels=0, input_dim=3
+2024-02-19 07:30:02.636 | INFO     | models.shapelatent_modules:__init__:29 - [Encoder] zdim=128, out_sigma=True; force_att: 0
+2024-02-19 07:30:02.636 | INFO     | utils.model_helper:import_model:105 - import: models.latent_points_ada.PointTransPVC
+2024-02-19 07:30:02.636 | INFO     | models.latent_points_ada:__init__:38 - [Build Unet] extra_feature_channels=0, input_dim=3
+2024-02-19 07:30:02.637 | INFO     | models.latent_points_ada:__init__:38 - [Build Unet] extra_feature_channels=0, input_dim=3
+2024-02-19 07:30:02.662 | INFO     | models.shapelatent_modules:__init__:29 - [Encoder] zdim=128, out_sigma=True; force_att: 0
+2024-02-19 07:30:02.662 | INFO     | utils.model_helper:import_model:105 - import: models.latent_points_ada.PointTransPVC
+2024-02-19 07:30:02.664 | INFO     | models.latent_points_ada:__init__:38 - [Build Unet] extra_feature_channels=0, input_dim=3
+2024-02-19 07:30:02.733 | INFO     | utils.model_helper:import_model:105 - import: models.latent_points_ada.LatentPointDecPVC
+2024-02-19 07:30:02.733 | INFO     | models.latent_points_ada:__init__:241 - [Build Dec] point_dim=3, context_dim=1
+2024-02-19 07:30:02.733 | INFO     | models.latent_points_ada:__init__:38 - [Build Unet] extra_feature_channels=1, input_dim=3
+2024-02-19 07:30:02.733 | INFO     | utils.model_helper:import_model:105 - import: models.latent_points_ada.LatentPointDecPVC
+2024-02-19 07:30:02.734 | INFO     | models.latent_points_ada:__init__:241 - [Build Dec] point_dim=3, context_dim=1
+2024-02-19 07:30:02.734 | INFO     | models.latent_points_ada:__init__:38 - [Build Unet] extra_feature_channels=1, input_dim=3
+2024-02-19 07:30:02.736 | INFO     | utils.model_helper:import_model:105 - import: models.latent_points_ada.LatentPointDecPVC
+2024-02-19 07:30:02.736 | INFO     | models.latent_points_ada:__init__:241 - [Build Dec] point_dim=3, context_dim=1
+2024-02-19 07:30:02.737 | INFO     | models.latent_points_ada:__init__:38 - [Build Unet] extra_feature_channels=1, input_dim=3
+2024-02-19 07:30:02.764 | INFO     | utils.model_helper:import_model:105 - import: models.latent_points_ada.LatentPointDecPVC
+2024-02-19 07:30:02.764 | INFO     | models.latent_points_ada:__init__:241 - [Build Dec] point_dim=3, context_dim=1
+2024-02-19 07:30:02.764 | INFO     | models.latent_points_ada:__init__:38 - [Build Unet] extra_feature_channels=1, input_dim=3
+2024-02-19 07:30:02.829 | INFO     | models.vae_adain:__init__:41 - [Build Model] style_encoder: models.shapelatent_modules.PointNetPlusEncoder, encoder: models.latent_points_ada.PointTransPVC, decoder: models.latent_points_ada.LatentPointDecPVC
+2024-02-19 07:30:02.829 | INFO     | models.vae_adain:__init__:41 - [Build Model] style_encoder: models.shapelatent_modules.PointNetPlusEncoder, encoder: models.latent_points_ada.PointTransPVC, decoder: models.latent_points_ada.LatentPointDecPVC
+2024-02-19 07:30:02.837 | INFO     | models.vae_adain:__init__:41 - [Build Model] style_encoder: models.shapelatent_modules.PointNetPlusEncoder, encoder: models.latent_points_ada.PointTransPVC, decoder: models.latent_points_ada.LatentPointDecPVC
+2024-02-19 07:30:02.864 | INFO     | models.vae_adain:__init__:41 - [Build Model] style_encoder: models.shapelatent_modules.PointNetPlusEncoder, encoder: models.latent_points_ada.PointTransPVC, decoder: models.latent_points_ada.LatentPointDecPVC
+2024-02-19 07:30:02.870 | INFO     | trainers.hvae_trainer:__init__:53 - broadcast_params: device=cuda:3
+2024-02-19 07:30:02.879 | INFO     | trainers.hvae_trainer:__init__:53 - broadcast_params: device=cuda:0
+2024-02-19 07:30:02.892 | INFO     | trainers.hvae_trainer:__init__:53 - broadcast_params: device=cuda:2
+2024-02-19 07:30:02.901 | INFO     | trainers.base_trainer:build_other_module:710 - no other module to build
+2024-02-19 07:30:02.902 | INFO     | trainers.hvae_trainer:__init__:58 - waitting for barrier, device=cuda:3
+2024-02-19 07:30:02.903 | INFO     | trainers.base_trainer:build_other_module:710 - no other module to build
+2024-02-19 07:30:02.904 | INFO     | trainers.hvae_trainer:__init__:58 - waitting for barrier, device=cuda:0
+2024-02-19 07:30:02.913 | INFO     | trainers.hvae_trainer:__init__:53 - broadcast_params: device=cuda:1
+2024-02-19 07:30:02.916 | INFO     | trainers.base_trainer:build_other_module:710 - no other module to build
+2024-02-19 07:30:02.916 | INFO     | trainers.hvae_trainer:__init__:58 - waitting for barrier, device=cuda:2
+2024-02-19 07:30:02.941 | INFO     | trainers.base_trainer:build_other_module:710 - no other module to build
+2024-02-19 07:30:02.942 | INFO     | trainers.hvae_trainer:__init__:58 - waitting for barrier, device=cuda:1
+2024-02-19 07:30:02.947 | INFO     | trainers.hvae_trainer:__init__:60 - pass barrier, device=cuda:2
+2024-02-19 07:30:02.947 | INFO     | trainers.hvae_trainer:__init__:60 - pass barrier, device=cuda:1
+2024-02-19 07:30:02.947 | INFO     | trainers.hvae_trainer:__init__:60 - pass barrier, device=cuda:0
+2024-02-19 07:30:02.947 | INFO     | trainers.hvae_trainer:__init__:60 - pass barrier, device=cuda:3
+2024-02-19 07:30:02.947 | INFO     | trainers.base_trainer:build_data:150 - start build_data
+2024-02-19 07:30:02.947 | INFO     | trainers.base_trainer:build_data:150 - start build_data
+2024-02-19 07:30:02.947 | INFO     | trainers.base_trainer:build_data:150 - start build_data
+2024-02-19 07:30:02.947 | INFO     | trainers.base_trainer:build_data:150 - start build_data
+2024-02-19 07:30:02.952 | INFO     | datasets.pointflow_datasets:get_datasets:343 - get_datasets: tr_sample_size=2048,  te_sample_size=2048;  random_subsample=1 normalize_global=False normalize_std_per_axix=False normalize_per_shape=False recenter_per_shape=False
+2024-02-19 07:30:02.952 | INFO     | datasets.pointflow_datasets:__init__:103 - [DATA] cat: all, split: train, full path: ./data/ShapeNetCore.v2.PC15k/; norm global=False, norm-box=True
+2024-02-19 07:30:02.952 | INFO     | datasets.pointflow_datasets:get_datasets:343 - get_datasets: tr_sample_size=2048,  te_sample_size=2048;  random_subsample=1 normalize_global=False normalize_std_per_axix=False normalize_per_shape=False recenter_per_shape=False
+2024-02-19 07:30:02.953 | INFO     | datasets.pointflow_datasets:__init__:103 - [DATA] cat: all, split: train, full path: ./data/ShapeNetCore.v2.PC15k/; norm global=False, norm-box=True
+2024-02-19 07:30:02.952 | INFO     | datasets.pointflow_datasets:get_datasets:343 - get_datasets: tr_sample_size=2048,  te_sample_size=2048;  random_subsample=1 normalize_global=False normalize_std_per_axix=False normalize_per_shape=False recenter_per_shape=False
+2024-02-19 07:30:02.953 | INFO     | datasets.pointflow_datasets:get_datasets:343 - get_datasets: tr_sample_size=2048,  te_sample_size=2048;  random_subsample=1 normalize_global=False normalize_std_per_axix=False normalize_per_shape=False recenter_per_shape=False
+2024-02-19 07:30:02.953 | INFO     | datasets.pointflow_datasets:__init__:103 - [DATA] cat: all, split: train, full path: ./data/ShapeNetCore.v2.PC15k/; norm global=False, norm-box=True
+2024-02-19 07:30:02.953 | INFO     | datasets.pointflow_datasets:__init__:103 - [DATA] cat: all, split: train, full path: ./data/ShapeNetCore.v2.PC15k/; norm global=False, norm-box=True
+2024-02-19 07:30:02.959 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [2832] under: ./data/ShapeNetCore.v2.PC15k/02691156/train 
+2024-02-19 07:30:02.960 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [2832] under: ./data/ShapeNetCore.v2.PC15k/02691156/train 
+2024-02-19 07:30:02.967 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [2832] under: ./data/ShapeNetCore.v2.PC15k/02691156/train 
+2024-02-19 07:30:02.970 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [2832] under: ./data/ShapeNetCore.v2.PC15k/02691156/train 
+2024-02-19 07:30:04.390 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [58] under: ./data/ShapeNetCore.v2.PC15k/02773838/train 
+2024-02-19 07:30:04.391 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [58] under: ./data/ShapeNetCore.v2.PC15k/02773838/train 
+2024-02-19 07:30:04.391 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [58] under: ./data/ShapeNetCore.v2.PC15k/02773838/train 
+2024-02-19 07:30:04.393 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [58] under: ./data/ShapeNetCore.v2.PC15k/02773838/train 
+2024-02-19 07:30:04.429 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [77] under: ./data/ShapeNetCore.v2.PC15k/02801938/train 
+2024-02-19 07:30:04.429 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [77] under: ./data/ShapeNetCore.v2.PC15k/02801938/train 
+2024-02-19 07:30:04.429 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [77] under: ./data/ShapeNetCore.v2.PC15k/02801938/train 
+2024-02-19 07:30:04.429 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [77] under: ./data/ShapeNetCore.v2.PC15k/02801938/train 
+2024-02-19 07:30:04.491 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [599] under: ./data/ShapeNetCore.v2.PC15k/02808440/train 
+2024-02-19 07:30:04.491 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [599] under: ./data/ShapeNetCore.v2.PC15k/02808440/train 
+2024-02-19 07:30:04.491 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [599] under: ./data/ShapeNetCore.v2.PC15k/02808440/train 
+2024-02-19 07:30:04.491 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [599] under: ./data/ShapeNetCore.v2.PC15k/02808440/train 
+2024-02-19 07:30:04.848 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [167] under: ./data/ShapeNetCore.v2.PC15k/02818832/train 
+2024-02-19 07:30:04.851 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [167] under: ./data/ShapeNetCore.v2.PC15k/02818832/train 
+2024-02-19 07:30:04.851 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [167] under: ./data/ShapeNetCore.v2.PC15k/02818832/train 
+2024-02-19 07:30:04.854 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [167] under: ./data/ShapeNetCore.v2.PC15k/02818832/train 
+2024-02-19 07:30:04.904 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1260] under: ./data/ShapeNetCore.v2.PC15k/02828884/train 
+2024-02-19 07:30:04.908 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1260] under: ./data/ShapeNetCore.v2.PC15k/02828884/train 
+2024-02-19 07:30:04.908 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1260] under: ./data/ShapeNetCore.v2.PC15k/02828884/train 
+2024-02-19 07:30:04.908 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1260] under: ./data/ShapeNetCore.v2.PC15k/02828884/train 
+2024-02-19 07:30:05.355 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [340] under: ./data/ShapeNetCore.v2.PC15k/02876657/train 
+2024-02-19 07:30:05.361 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [340] under: ./data/ShapeNetCore.v2.PC15k/02876657/train 
+2024-02-19 07:30:05.361 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [340] under: ./data/ShapeNetCore.v2.PC15k/02876657/train 
+2024-02-19 07:30:05.361 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [340] under: ./data/ShapeNetCore.v2.PC15k/02876657/train 
+2024-02-19 07:30:05.461 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [125] under: ./data/ShapeNetCore.v2.PC15k/02880940/train 
+2024-02-19 07:30:05.469 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [125] under: ./data/ShapeNetCore.v2.PC15k/02880940/train 
+2024-02-19 07:30:05.470 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [125] under: ./data/ShapeNetCore.v2.PC15k/02880940/train 
+2024-02-19 07:30:05.472 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [125] under: ./data/ShapeNetCore.v2.PC15k/02880940/train 
+2024-02-19 07:30:05.502 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [628] under: ./data/ShapeNetCore.v2.PC15k/02924116/train 
+2024-02-19 07:30:05.507 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [628] under: ./data/ShapeNetCore.v2.PC15k/02924116/train 
+2024-02-19 07:30:05.509 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [628] under: ./data/ShapeNetCore.v2.PC15k/02924116/train 
+2024-02-19 07:30:05.513 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [628] under: ./data/ShapeNetCore.v2.PC15k/02924116/train 
+2024-02-19 07:30:05.858 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1076] under: ./data/ShapeNetCore.v2.PC15k/02933112/train 
+2024-02-19 07:30:05.858 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1076] under: ./data/ShapeNetCore.v2.PC15k/02933112/train 
+2024-02-19 07:30:05.858 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1076] under: ./data/ShapeNetCore.v2.PC15k/02933112/train 
+2024-02-19 07:30:05.862 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1076] under: ./data/ShapeNetCore.v2.PC15k/02933112/train 
+2024-02-19 07:30:06.367 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [227] under: ./data/ShapeNetCore.v2.PC15k/02747177/train 
+2024-02-19 07:30:06.369 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [227] under: ./data/ShapeNetCore.v2.PC15k/02747177/train 
+2024-02-19 07:30:06.369 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [227] under: ./data/ShapeNetCore.v2.PC15k/02747177/train 
+2024-02-19 07:30:06.374 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [227] under: ./data/ShapeNetCore.v2.PC15k/02747177/train 
+2024-02-19 07:30:06.458 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [79] under: ./data/ShapeNetCore.v2.PC15k/02942699/train 
+2024-02-19 07:30:06.458 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [79] under: ./data/ShapeNetCore.v2.PC15k/02942699/train 
+2024-02-19 07:30:06.459 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [79] under: ./data/ShapeNetCore.v2.PC15k/02942699/train 
+2024-02-19 07:30:06.460 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [79] under: ./data/ShapeNetCore.v2.PC15k/02942699/train 
+2024-02-19 07:30:06.486 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [39] under: ./data/ShapeNetCore.v2.PC15k/02954340/train 
+2024-02-19 07:30:06.486 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [39] under: ./data/ShapeNetCore.v2.PC15k/02954340/train 
+2024-02-19 07:30:06.486 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [39] under: ./data/ShapeNetCore.v2.PC15k/02954340/train 
+2024-02-19 07:30:06.486 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [39] under: ./data/ShapeNetCore.v2.PC15k/02954340/train 
+2024-02-19 07:30:06.506 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [2458] under: ./data/ShapeNetCore.v2.PC15k/02958343/train 
+2024-02-19 07:30:06.506 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [2458] under: ./data/ShapeNetCore.v2.PC15k/02958343/train 
+2024-02-19 07:30:06.508 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [2458] under: ./data/ShapeNetCore.v2.PC15k/02958343/train 
+2024-02-19 07:30:06.512 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [2458] under: ./data/ShapeNetCore.v2.PC15k/02958343/train 
+2024-02-19 07:30:07.673 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [4612] under: ./data/ShapeNetCore.v2.PC15k/03001627/train 
+2024-02-19 07:30:07.679 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [4612] under: ./data/ShapeNetCore.v2.PC15k/03001627/train 
+2024-02-19 07:30:07.684 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [4612] under: ./data/ShapeNetCore.v2.PC15k/03001627/train 
+2024-02-19 07:30:07.688 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [4612] under: ./data/ShapeNetCore.v2.PC15k/03001627/train 
+2024-02-19 07:30:10.142 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [455] under: ./data/ShapeNetCore.v2.PC15k/03046257/train 
+2024-02-19 07:30:10.142 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [455] under: ./data/ShapeNetCore.v2.PC15k/03046257/train 
+2024-02-19 07:30:10.142 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [455] under: ./data/ShapeNetCore.v2.PC15k/03046257/train 
+2024-02-19 07:30:10.148 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [455] under: ./data/ShapeNetCore.v2.PC15k/03046257/train 
+2024-02-19 07:30:10.355 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [65] under: ./data/ShapeNetCore.v2.PC15k/03207941/train 
+2024-02-19 07:30:10.355 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [65] under: ./data/ShapeNetCore.v2.PC15k/03207941/train 
+2024-02-19 07:30:10.356 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [65] under: ./data/ShapeNetCore.v2.PC15k/03207941/train 
+2024-02-19 07:30:10.356 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [65] under: ./data/ShapeNetCore.v2.PC15k/03207941/train 
+2024-02-19 07:30:10.400 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [762] under: ./data/ShapeNetCore.v2.PC15k/03211117/train 
+2024-02-19 07:30:10.400 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [762] under: ./data/ShapeNetCore.v2.PC15k/03211117/train 
+2024-02-19 07:30:10.403 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [762] under: ./data/ShapeNetCore.v2.PC15k/03211117/train 
+2024-02-19 07:30:10.407 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [762] under: ./data/ShapeNetCore.v2.PC15k/03211117/train 
+2024-02-19 07:30:10.776 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [5863] under: ./data/ShapeNetCore.v2.PC15k/04379243/train 
+2024-02-19 07:30:10.781 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [5863] under: ./data/ShapeNetCore.v2.PC15k/04379243/train 
+2024-02-19 07:30:10.781 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [5863] under: ./data/ShapeNetCore.v2.PC15k/04379243/train 
+2024-02-19 07:30:10.782 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [5863] under: ./data/ShapeNetCore.v2.PC15k/04379243/train 
+2024-02-19 07:30:13.928 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [323] under: ./data/ShapeNetCore.v2.PC15k/04401088/train 
+2024-02-19 07:30:13.929 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [323] under: ./data/ShapeNetCore.v2.PC15k/04401088/train 
+2024-02-19 07:30:13.929 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [323] under: ./data/ShapeNetCore.v2.PC15k/04401088/train 
+2024-02-19 07:30:13.930 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [323] under: ./data/ShapeNetCore.v2.PC15k/04401088/train 
+2024-02-19 07:30:14.192 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [73] under: ./data/ShapeNetCore.v2.PC15k/02946921/train 
+2024-02-19 07:30:14.192 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [73] under: ./data/ShapeNetCore.v2.PC15k/02946921/train 
+2024-02-19 07:30:14.193 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [73] under: ./data/ShapeNetCore.v2.PC15k/02946921/train 
+2024-02-19 07:30:14.199 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [73] under: ./data/ShapeNetCore.v2.PC15k/02946921/train 
+2024-02-19 07:30:14.233 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [84] under: ./data/ShapeNetCore.v2.PC15k/04460130/train 
+2024-02-19 07:30:14.233 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [84] under: ./data/ShapeNetCore.v2.PC15k/04460130/train 
+2024-02-19 07:30:14.234 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [84] under: ./data/ShapeNetCore.v2.PC15k/04460130/train 
+2024-02-19 07:30:14.236 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [84] under: ./data/ShapeNetCore.v2.PC15k/04460130/train 
+2024-02-19 07:30:14.284 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [272] under: ./data/ShapeNetCore.v2.PC15k/04468005/train 
+2024-02-19 07:30:14.284 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [272] under: ./data/ShapeNetCore.v2.PC15k/04468005/train 
+2024-02-19 07:30:14.285 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [272] under: ./data/ShapeNetCore.v2.PC15k/04468005/train 
+2024-02-19 07:30:14.285 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [272] under: ./data/ShapeNetCore.v2.PC15k/04468005/train 
+2024-02-19 07:30:14.459 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [45] under: ./data/ShapeNetCore.v2.PC15k/03085013/train 
+2024-02-19 07:30:14.460 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [45] under: ./data/ShapeNetCore.v2.PC15k/03085013/train 
+2024-02-19 07:30:14.461 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [45] under: ./data/ShapeNetCore.v2.PC15k/03085013/train 
+2024-02-19 07:30:14.467 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [45] under: ./data/ShapeNetCore.v2.PC15k/03085013/train 
+2024-02-19 07:30:14.486 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [51] under: ./data/ShapeNetCore.v2.PC15k/03261776/train 
+2024-02-19 07:30:14.486 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [51] under: ./data/ShapeNetCore.v2.PC15k/03261776/train 
+2024-02-19 07:30:14.487 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [51] under: ./data/ShapeNetCore.v2.PC15k/03261776/train 
+2024-02-19 07:30:14.490 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [51] under: ./data/ShapeNetCore.v2.PC15k/03261776/train 
+2024-02-19 07:30:14.510 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [519] under: ./data/ShapeNetCore.v2.PC15k/03325088/train 
+2024-02-19 07:30:14.510 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [519] under: ./data/ShapeNetCore.v2.PC15k/03325088/train 
+2024-02-19 07:30:14.515 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [519] under: ./data/ShapeNetCore.v2.PC15k/03325088/train 
+2024-02-19 07:30:14.515 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [519] under: ./data/ShapeNetCore.v2.PC15k/03325088/train 
+2024-02-19 07:30:14.811 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [208] under: ./data/ShapeNetCore.v2.PC15k/03337140/train 
+2024-02-19 07:30:14.811 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [208] under: ./data/ShapeNetCore.v2.PC15k/03337140/train 
+2024-02-19 07:30:14.812 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [208] under: ./data/ShapeNetCore.v2.PC15k/03337140/train 
+2024-02-19 07:30:14.813 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [208] under: ./data/ShapeNetCore.v2.PC15k/03337140/train 
+2024-02-19 07:30:14.969 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [557] under: ./data/ShapeNetCore.v2.PC15k/03467517/train 
+2024-02-19 07:30:14.969 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [557] under: ./data/ShapeNetCore.v2.PC15k/03467517/train 
+2024-02-19 07:30:14.969 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [557] under: ./data/ShapeNetCore.v2.PC15k/03467517/train 
+2024-02-19 07:30:14.970 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [557] under: ./data/ShapeNetCore.v2.PC15k/03467517/train 
+2024-02-19 07:30:15.269 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [113] under: ./data/ShapeNetCore.v2.PC15k/03513137/train 
+2024-02-19 07:30:15.273 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [113] under: ./data/ShapeNetCore.v2.PC15k/03513137/train 
+2024-02-19 07:30:15.274 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [113] under: ./data/ShapeNetCore.v2.PC15k/03513137/train 
+2024-02-19 07:30:15.289 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [113] under: ./data/ShapeNetCore.v2.PC15k/03513137/train 
+2024-02-19 07:30:15.313 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [380] under: ./data/ShapeNetCore.v2.PC15k/03593526/train 
+2024-02-19 07:30:15.314 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [380] under: ./data/ShapeNetCore.v2.PC15k/03593526/train 
+2024-02-19 07:30:15.314 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [380] under: ./data/ShapeNetCore.v2.PC15k/03593526/train 
+2024-02-19 07:30:15.326 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [380] under: ./data/ShapeNetCore.v2.PC15k/03593526/train 
+2024-02-19 07:30:15.467 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [296] under: ./data/ShapeNetCore.v2.PC15k/03624134/train 
+2024-02-19 07:30:15.468 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [296] under: ./data/ShapeNetCore.v2.PC15k/03624134/train 
+2024-02-19 07:30:15.468 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [296] under: ./data/ShapeNetCore.v2.PC15k/03624134/train 
+2024-02-19 07:30:15.474 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [296] under: ./data/ShapeNetCore.v2.PC15k/03624134/train 
+2024-02-19 07:30:15.593 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1620] under: ./data/ShapeNetCore.v2.PC15k/03636649/train 
+2024-02-19 07:30:15.595 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1620] under: ./data/ShapeNetCore.v2.PC15k/03636649/train 
+2024-02-19 07:30:15.597 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1620] under: ./data/ShapeNetCore.v2.PC15k/03636649/train 
+2024-02-19 07:30:15.599 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1620] under: ./data/ShapeNetCore.v2.PC15k/03636649/train 
+2024-02-19 07:30:16.557 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [319] under: ./data/ShapeNetCore.v2.PC15k/03642806/train 
+2024-02-19 07:30:16.558 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [319] under: ./data/ShapeNetCore.v2.PC15k/03642806/train 
+2024-02-19 07:30:16.558 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [319] under: ./data/ShapeNetCore.v2.PC15k/03642806/train 
+2024-02-19 07:30:16.558 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [319] under: ./data/ShapeNetCore.v2.PC15k/03642806/train 
+2024-02-19 07:30:16.721 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1116] under: ./data/ShapeNetCore.v2.PC15k/03691459/train 
+2024-02-19 07:30:16.721 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1116] under: ./data/ShapeNetCore.v2.PC15k/03691459/train 
+2024-02-19 07:30:16.723 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1116] under: ./data/ShapeNetCore.v2.PC15k/03691459/train 
+2024-02-19 07:30:16.738 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1116] under: ./data/ShapeNetCore.v2.PC15k/03691459/train 
+2024-02-19 07:30:17.335 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [65] under: ./data/ShapeNetCore.v2.PC15k/03710193/train 
+2024-02-19 07:30:17.335 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [65] under: ./data/ShapeNetCore.v2.PC15k/03710193/train 
+2024-02-19 07:30:17.335 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [65] under: ./data/ShapeNetCore.v2.PC15k/03710193/train 
+2024-02-19 07:30:17.335 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [65] under: ./data/ShapeNetCore.v2.PC15k/03710193/train 
+2024-02-19 07:30:17.377 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [46] under: ./data/ShapeNetCore.v2.PC15k/03759954/train 
+2024-02-19 07:30:17.377 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [46] under: ./data/ShapeNetCore.v2.PC15k/03759954/train 
+2024-02-19 07:30:17.377 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [46] under: ./data/ShapeNetCore.v2.PC15k/03759954/train 
+2024-02-19 07:30:17.378 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [46] under: ./data/ShapeNetCore.v2.PC15k/03759954/train 
+2024-02-19 07:30:17.417 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [107] under: ./data/ShapeNetCore.v2.PC15k/03761084/train 
+2024-02-19 07:30:17.417 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [107] under: ./data/ShapeNetCore.v2.PC15k/03761084/train 
+2024-02-19 07:30:17.417 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [107] under: ./data/ShapeNetCore.v2.PC15k/03761084/train 
+2024-02-19 07:30:17.417 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [107] under: ./data/ShapeNetCore.v2.PC15k/03761084/train 
+2024-02-19 07:30:17.498 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [235] under: ./data/ShapeNetCore.v2.PC15k/03790512/train 
+2024-02-19 07:30:17.499 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [235] under: ./data/ShapeNetCore.v2.PC15k/03790512/train 
+2024-02-19 07:30:17.499 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [235] under: ./data/ShapeNetCore.v2.PC15k/03790512/train 
+2024-02-19 07:30:17.503 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [235] under: ./data/ShapeNetCore.v2.PC15k/03790512/train 
+2024-02-19 07:30:17.673 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [149] under: ./data/ShapeNetCore.v2.PC15k/03797390/train 
+2024-02-19 07:30:17.674 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [149] under: ./data/ShapeNetCore.v2.PC15k/03797390/train 
+2024-02-19 07:30:17.675 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [149] under: ./data/ShapeNetCore.v2.PC15k/03797390/train 
+2024-02-19 07:30:17.675 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [149] under: ./data/ShapeNetCore.v2.PC15k/03797390/train 
+2024-02-19 07:30:17.777 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [167] under: ./data/ShapeNetCore.v2.PC15k/03928116/train 
+2024-02-19 07:30:17.777 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [167] under: ./data/ShapeNetCore.v2.PC15k/03928116/train 
+2024-02-19 07:30:17.777 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [167] under: ./data/ShapeNetCore.v2.PC15k/03928116/train 
+2024-02-19 07:30:17.777 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [167] under: ./data/ShapeNetCore.v2.PC15k/03928116/train 
+2024-02-19 07:30:17.901 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [67] under: ./data/ShapeNetCore.v2.PC15k/03938244/train 
+2024-02-19 07:30:17.901 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [67] under: ./data/ShapeNetCore.v2.PC15k/03938244/train 
+2024-02-19 07:30:17.901 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [67] under: ./data/ShapeNetCore.v2.PC15k/03938244/train 
+2024-02-19 07:30:17.901 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [67] under: ./data/ShapeNetCore.v2.PC15k/03938244/train 
+2024-02-19 07:30:17.954 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [185] under: ./data/ShapeNetCore.v2.PC15k/03948459/train 
+2024-02-19 07:30:17.954 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [185] under: ./data/ShapeNetCore.v2.PC15k/03948459/train 
+2024-02-19 07:30:17.954 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [185] under: ./data/ShapeNetCore.v2.PC15k/03948459/train 
+2024-02-19 07:30:17.957 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [185] under: ./data/ShapeNetCore.v2.PC15k/03948459/train 
+2024-02-19 07:30:18.025 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [420] under: ./data/ShapeNetCore.v2.PC15k/03991062/train 
+2024-02-19 07:30:18.025 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [420] under: ./data/ShapeNetCore.v2.PC15k/03991062/train 
+2024-02-19 07:30:18.025 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [420] under: ./data/ShapeNetCore.v2.PC15k/03991062/train 
+2024-02-19 07:30:18.029 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [420] under: ./data/ShapeNetCore.v2.PC15k/03991062/train 
+2024-02-19 07:30:18.187 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [115] under: ./data/ShapeNetCore.v2.PC15k/04004475/train 
+2024-02-19 07:30:18.187 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [115] under: ./data/ShapeNetCore.v2.PC15k/04004475/train 
+2024-02-19 07:30:18.188 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [115] under: ./data/ShapeNetCore.v2.PC15k/04004475/train 
+2024-02-19 07:30:18.188 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [115] under: ./data/ShapeNetCore.v2.PC15k/04004475/train 
+2024-02-19 07:30:18.273 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [46] under: ./data/ShapeNetCore.v2.PC15k/04074963/train 
+2024-02-19 07:30:18.274 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [46] under: ./data/ShapeNetCore.v2.PC15k/04074963/train 
+2024-02-19 07:30:18.274 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [46] under: ./data/ShapeNetCore.v2.PC15k/04074963/train 
+2024-02-19 07:30:18.274 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [46] under: ./data/ShapeNetCore.v2.PC15k/04074963/train 
+2024-02-19 07:30:18.314 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1656] under: ./data/ShapeNetCore.v2.PC15k/04090263/train 
+2024-02-19 07:30:18.315 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1656] under: ./data/ShapeNetCore.v2.PC15k/04090263/train 
+2024-02-19 07:30:18.316 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1656] under: ./data/ShapeNetCore.v2.PC15k/04090263/train 
+2024-02-19 07:30:18.317 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1656] under: ./data/ShapeNetCore.v2.PC15k/04090263/train 
+2024-02-19 07:30:19.272 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [59] under: ./data/ShapeNetCore.v2.PC15k/04099429/train 
+2024-02-19 07:30:19.272 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [59] under: ./data/ShapeNetCore.v2.PC15k/04099429/train 
+2024-02-19 07:30:19.272 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [59] under: ./data/ShapeNetCore.v2.PC15k/04099429/train 
+2024-02-19 07:30:19.272 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [59] under: ./data/ShapeNetCore.v2.PC15k/04099429/train 
+2024-02-19 07:30:19.296 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [106] under: ./data/ShapeNetCore.v2.PC15k/04225987/train 
+2024-02-19 07:30:19.298 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [106] under: ./data/ShapeNetCore.v2.PC15k/04225987/train 
+2024-02-19 07:30:19.298 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [106] under: ./data/ShapeNetCore.v2.PC15k/04225987/train 
+2024-02-19 07:30:19.300 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [106] under: ./data/ShapeNetCore.v2.PC15k/04225987/train 
+2024-02-19 07:30:19.344 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [2198] under: ./data/ShapeNetCore.v2.PC15k/04256520/train 
+2024-02-19 07:30:19.344 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [2198] under: ./data/ShapeNetCore.v2.PC15k/04256520/train 
+2024-02-19 07:30:19.344 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [2198] under: ./data/ShapeNetCore.v2.PC15k/04256520/train 
+2024-02-19 07:30:19.352 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [2198] under: ./data/ShapeNetCore.v2.PC15k/04256520/train 
+2024-02-19 07:30:20.413 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [152] under: ./data/ShapeNetCore.v2.PC15k/04330267/train 
+2024-02-19 07:30:20.415 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [152] under: ./data/ShapeNetCore.v2.PC15k/04330267/train 
+2024-02-19 07:30:20.415 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [152] under: ./data/ShapeNetCore.v2.PC15k/04330267/train 
+2024-02-19 07:30:20.415 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [152] under: ./data/ShapeNetCore.v2.PC15k/04330267/train 
+2024-02-19 07:30:20.528 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1356] under: ./data/ShapeNetCore.v2.PC15k/04530566/train 
+2024-02-19 07:30:20.529 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1356] under: ./data/ShapeNetCore.v2.PC15k/04530566/train 
+2024-02-19 07:30:20.532 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1356] under: ./data/ShapeNetCore.v2.PC15k/04530566/train 
+2024-02-19 07:30:20.532 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [1356] under: ./data/ShapeNetCore.v2.PC15k/04530566/train 
+2024-02-19 07:30:21.192 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [116] under: ./data/ShapeNetCore.v2.PC15k/04554684/train 
+2024-02-19 07:30:21.192 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [116] under: ./data/ShapeNetCore.v2.PC15k/04554684/train 
+2024-02-19 07:30:21.192 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [116] under: ./data/ShapeNetCore.v2.PC15k/04554684/train 
+2024-02-19 07:30:21.193 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [116] under: ./data/ShapeNetCore.v2.PC15k/04554684/train 
+2024-02-19 07:30:21.282 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [404] under: ./data/ShapeNetCore.v2.PC15k/02992529/train 
+2024-02-19 07:30:21.283 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [404] under: ./data/ShapeNetCore.v2.PC15k/02992529/train 
+2024-02-19 07:30:21.284 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [404] under: ./data/ShapeNetCore.v2.PC15k/02992529/train 
+2024-02-19 07:30:21.284 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [404] under: ./data/ShapeNetCore.v2.PC15k/02992529/train 
+2024-02-19 07:30:21.569 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [51] under: ./data/ShapeNetCore.v2.PC15k/02843684/train 
+2024-02-19 07:30:21.569 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [51] under: ./data/ShapeNetCore.v2.PC15k/02843684/train 
+2024-02-19 07:30:21.570 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [51] under: ./data/ShapeNetCore.v2.PC15k/02843684/train 
+2024-02-19 07:30:21.570 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [51] under: ./data/ShapeNetCore.v2.PC15k/02843684/train 
+2024-02-19 07:30:21.611 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [310] under: ./data/ShapeNetCore.v2.PC15k/02871439/train 
+2024-02-19 07:30:21.611 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [310] under: ./data/ShapeNetCore.v2.PC15k/02871439/train 
+2024-02-19 07:30:21.611 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [310] under: ./data/ShapeNetCore.v2.PC15k/02871439/train 
+2024-02-19 07:30:21.612 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [310] under: ./data/ShapeNetCore.v2.PC15k/02871439/train 
+2024-02-19 07:30:21.783 | INFO     | datasets.pointflow_datasets:__init__:164 - [DATA] Load data time: 18.8s | dir: ['02691156', '02773838', '02801938', '02808440', '02818832', '02828884', '02876657', '02880940', '02924116', '02933112', '02747177', '02942699', '02954340', '02958343', '03001627', '03046257', '03207941', '03211117', '04379243', '04401088', '02946921', '04460130', '04468005', '03085013', '03261776', '03325088', '03337140', '03467517', '03513137', '03593526', '03624134', '03636649', '03642806', '03691459', '03710193', '03759954', '03761084', '03790512', '03797390', '03928116', '03938244', '03948459', '03991062', '04004475', '04074963', '04090263', '04099429', '04225987', '04256520', '04330267', '04530566', '04554684', '02992529', '02843684', '02871439'] | sample_with_replacement: 1; num points: 35708
+2024-02-19 07:30:21.783 | INFO     | datasets.pointflow_datasets:__init__:164 - [DATA] Load data time: 18.8s | dir: ['02691156', '02773838', '02801938', '02808440', '02818832', '02828884', '02876657', '02880940', '02924116', '02933112', '02747177', '02942699', '02954340', '02958343', '03001627', '03046257', '03207941', '03211117', '04379243', '04401088', '02946921', '04460130', '04468005', '03085013', '03261776', '03325088', '03337140', '03467517', '03513137', '03593526', '03624134', '03636649', '03642806', '03691459', '03710193', '03759954', '03761084', '03790512', '03797390', '03928116', '03938244', '03948459', '03991062', '04004475', '04074963', '04090263', '04099429', '04225987', '04256520', '04330267', '04530566', '04554684', '02992529', '02843684', '02871439'] | sample_with_replacement: 1; num points: 35708
+2024-02-19 07:30:21.785 | INFO     | datasets.pointflow_datasets:__init__:164 - [DATA] Load data time: 18.8s | dir: ['02691156', '02773838', '02801938', '02808440', '02818832', '02828884', '02876657', '02880940', '02924116', '02933112', '02747177', '02942699', '02954340', '02958343', '03001627', '03046257', '03207941', '03211117', '04379243', '04401088', '02946921', '04460130', '04468005', '03085013', '03261776', '03325088', '03337140', '03467517', '03513137', '03593526', '03624134', '03636649', '03642806', '03691459', '03710193', '03759954', '03761084', '03790512', '03797390', '03928116', '03938244', '03948459', '03991062', '04004475', '04074963', '04090263', '04099429', '04225987', '04256520', '04330267', '04530566', '04554684', '02992529', '02843684', '02871439'] | sample_with_replacement: 1; num points: 35708
+2024-02-19 07:30:21.785 | INFO     | datasets.pointflow_datasets:__init__:164 - [DATA] Load data time: 18.8s | dir: ['02691156', '02773838', '02801938', '02808440', '02818832', '02828884', '02876657', '02880940', '02924116', '02933112', '02747177', '02942699', '02954340', '02958343', '03001627', '03046257', '03207941', '03211117', '04379243', '04401088', '02946921', '04460130', '04468005', '03085013', '03261776', '03325088', '03337140', '03467517', '03513137', '03593526', '03624134', '03636649', '03642806', '03691459', '03710193', '03759954', '03761084', '03790512', '03797390', '03928116', '03938244', '03948459', '03991062', '04004475', '04074963', '04090263', '04099429', '04225987', '04256520', '04330267', '04530566', '04554684', '02992529', '02843684', '02871439'] | sample_with_replacement: 1; num points: 35708
+2024-02-19 07:31:51.094 | INFO     | datasets.pointflow_datasets:__init__:237 - [DATA] shape=(35708, 15000, 3), all_points_mean:=(35708, 1, 3), std=(35708, 1, 1), max=1.000, min=-1.000; num-pts=2048
+2024-02-19 07:31:51.095 | INFO     | datasets.pointflow_datasets:__init__:103 - [DATA] cat: all, split: val, full path: ./data/ShapeNetCore.v2.PC15k/; norm global=False, norm-box=True
+2024-02-19 07:31:51.096 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [405] under: ./data/ShapeNetCore.v2.PC15k/02691156/val 
+2024-02-19 07:31:51.201 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [8] under: ./data/ShapeNetCore.v2.PC15k/02773838/val 
+2024-02-19 07:31:51.204 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [11] under: ./data/ShapeNetCore.v2.PC15k/02801938/val 
+2024-02-19 07:31:51.207 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [85] under: ./data/ShapeNetCore.v2.PC15k/02808440/val 
+2024-02-19 07:31:51.230 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [23] under: ./data/ShapeNetCore.v2.PC15k/02818832/val 
+2024-02-19 07:31:51.239 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [185] under: ./data/ShapeNetCore.v2.PC15k/02828884/val 
+2024-02-19 07:31:51.290 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [43] under: ./data/ShapeNetCore.v2.PC15k/02876657/val 
+2024-02-19 07:31:51.303 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [17] under: ./data/ShapeNetCore.v2.PC15k/02880940/val 
+2024-02-19 07:31:51.308 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [94] under: ./data/ShapeNetCore.v2.PC15k/02924116/val 
+2024-02-19 07:31:51.334 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [152] under: ./data/ShapeNetCore.v2.PC15k/02933112/val 
+2024-02-19 07:31:51.377 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [34] under: ./data/ShapeNetCore.v2.PC15k/02747177/val 
+2024-02-19 07:31:51.386 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [11] under: ./data/ShapeNetCore.v2.PC15k/02942699/val 
+2024-02-19 07:31:51.390 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [5] under: ./data/ShapeNetCore.v2.PC15k/02954340/val 
+2024-02-19 07:31:51.392 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [352] under: ./data/ShapeNetCore.v2.PC15k/02958343/val 
+2024-02-19 07:31:51.489 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [662] under: ./data/ShapeNetCore.v2.PC15k/03001627/val 
+2024-02-19 07:31:51.664 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [65] under: ./data/ShapeNetCore.v2.PC15k/03046257/val 
+2024-02-19 07:31:51.681 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [9] under: ./data/ShapeNetCore.v2.PC15k/03207941/val 
+2024-02-19 07:31:51.684 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [112] under: ./data/ShapeNetCore.v2.PC15k/03211117/val 
+2024-02-19 07:31:51.717 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [842] under: ./data/ShapeNetCore.v2.PC15k/04379243/val 
+2024-02-19 07:31:51.944 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [23] under: ./data/ShapeNetCore.v2.PC15k/04401088/val 
+2024-02-19 07:31:51.951 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [13] under: ./data/ShapeNetCore.v2.PC15k/02946921/val 
+2024-02-19 07:31:51.954 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [13] under: ./data/ShapeNetCore.v2.PC15k/04460130/val 
+2024-02-19 07:31:51.958 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [39] under: ./data/ShapeNetCore.v2.PC15k/04468005/val 
+2024-02-19 07:31:51.968 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [6] under: ./data/ShapeNetCore.v2.PC15k/03085013/val 
+2024-02-19 07:31:51.970 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [7] under: ./data/ShapeNetCore.v2.PC15k/03261776/val 
+2024-02-19 07:31:51.972 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [75] under: ./data/ShapeNetCore.v2.PC15k/03325088/val 
+2024-02-19 07:31:51.992 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [30] under: ./data/ShapeNetCore.v2.PC15k/03337140/val 
+2024-02-19 07:31:52.000 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [80] under: ./data/ShapeNetCore.v2.PC15k/03467517/val 
+2024-02-19 07:31:52.021 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [16] under: ./data/ShapeNetCore.v2.PC15k/03513137/val 
+2024-02-19 07:31:52.025 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [64] under: ./data/ShapeNetCore.v2.PC15k/03593526/val 
+2024-02-19 07:31:52.042 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [43] under: ./data/ShapeNetCore.v2.PC15k/03624134/val 
+2024-02-19 07:31:52.054 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [232] under: ./data/ShapeNetCore.v2.PC15k/03636649/val 
+2024-02-19 07:31:52.113 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [45] under: ./data/ShapeNetCore.v2.PC15k/03642806/val 
+2024-02-19 07:31:52.126 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [158] under: ./data/ShapeNetCore.v2.PC15k/03691459/val 
+2024-02-19 07:31:52.166 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [10] under: ./data/ShapeNetCore.v2.PC15k/03710193/val 
+2024-02-19 07:31:52.169 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [7] under: ./data/ShapeNetCore.v2.PC15k/03759954/val 
+2024-02-19 07:31:52.171 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [15] under: ./data/ShapeNetCore.v2.PC15k/03761084/val 
+2024-02-19 07:31:52.175 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [34] under: ./data/ShapeNetCore.v2.PC15k/03790512/val 
+2024-02-19 07:31:52.184 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [22] under: ./data/ShapeNetCore.v2.PC15k/03797390/val 
+2024-02-19 07:31:52.190 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [24] under: ./data/ShapeNetCore.v2.PC15k/03928116/val 
+2024-02-19 07:31:52.197 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [9] under: ./data/ShapeNetCore.v2.PC15k/03938244/val 
+2024-02-19 07:31:52.199 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [26] under: ./data/ShapeNetCore.v2.PC15k/03948459/val 
+2024-02-19 07:31:52.206 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [61] under: ./data/ShapeNetCore.v2.PC15k/03991062/val 
+2024-02-19 07:31:52.223 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [16] under: ./data/ShapeNetCore.v2.PC15k/04004475/val 
+2024-02-19 07:31:52.227 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [6] under: ./data/ShapeNetCore.v2.PC15k/04074963/val 
+2024-02-19 07:31:52.229 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [242] under: ./data/ShapeNetCore.v2.PC15k/04090263/val 
+2024-02-19 07:31:52.291 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [9] under: ./data/ShapeNetCore.v2.PC15k/04099429/val 
+2024-02-19 07:31:52.294 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [15] under: ./data/ShapeNetCore.v2.PC15k/04225987/val 
+2024-02-19 07:31:52.299 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [330] under: ./data/ShapeNetCore.v2.PC15k/04256520/val 
+2024-02-19 07:31:52.387 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [22] under: ./data/ShapeNetCore.v2.PC15k/04330267/val 
+2024-02-19 07:31:52.393 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [194] under: ./data/ShapeNetCore.v2.PC15k/04530566/val 
+2024-02-19 07:31:52.443 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [17] under: ./data/ShapeNetCore.v2.PC15k/04554684/val 
+2024-02-19 07:31:52.448 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [83] under: ./data/ShapeNetCore.v2.PC15k/02992529/val 
+2024-02-19 07:31:52.469 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [7] under: ./data/ShapeNetCore.v2.PC15k/02843684/val 
+2024-02-19 07:31:52.472 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [50] under: ./data/ShapeNetCore.v2.PC15k/02871439/val 
+2024-02-19 07:31:52.485 | INFO     | datasets.pointflow_datasets:__init__:164 - [DATA] Load data time: 1.4s | dir: ['02691156', '02773838', '02801938', '02808440', '02818832', '02828884', '02876657', '02880940', '02924116', '02933112', '02747177', '02942699', '02954340', '02958343', '03001627', '03046257', '03207941', '03211117', '04379243', '04401088', '02946921', '04460130', '04468005', '03085013', '03261776', '03325088', '03337140', '03467517', '03513137', '03593526', '03624134', '03636649', '03642806', '03691459', '03710193', '03759954', '03761084', '03790512', '03797390', '03928116', '03938244', '03948459', '03991062', '04004475', '04074963', '04090263', '04099429', '04225987', '04256520', '04330267', '04530566', '04554684', '02992529', '02843684', '02871439'] | sample_with_replacement: 1; num points: 5158
+2024-02-19 07:32:06.604 | INFO     | datasets.pointflow_datasets:__init__:237 - [DATA] shape=(5158, 15000, 3), all_points_mean:=(5158, 1, 3), std=(5158, 1, 1), max=1.000, min=-1.000; num-pts=2048
+2024-02-19 07:32:06.609 | INFO     | datasets.pointflow_datasets:get_data_loaders:412 - [Batch Size] train=8, test=10; drop-last=1
+2024-02-19 07:32:06.618 | INFO     | trainers.hvae_trainer:__init__:75 - done init trainer @cuda:0
+2024-02-19 07:32:07.629 | INFO     | trainers.base_trainer:prepare_vis_data:674 - [prepare_vis_data] len of train_loader: 1115
+2024-02-19 07:32:08.831 | INFO     | trainers.base_trainer:prepare_vis_data:689 - tr_x: torch.Size([16, 2048, 3]), m_pcs: torch.Size([16, 1, 3]), s_pcs: torch.Size([16, 1, 1]), val_x: torch.Size([16, 2048, 3])
+2024-02-19 07:32:08.859 | INFO     | __main__:main:33 - param size = 22.402731M 
+2024-02-19 07:32:08.860 | INFO     | trainers.base_trainer:set_writer:55 - 
+----------
+[url]: none
+exp/0219/all/5c4984h_hvae_lion_B8
+----------
+2024-02-19 07:32:08.866 | INFO     | __main__:main:55 - not find any checkpoint: exp/0219/all/5c4984h_hvae_lion_B8/checkpoints, (exist=False), or snapshot exp/0219/all/5c4984h_hvae_lion_B8/checkpoints/snapshot, (exist=False)
+2024-02-19 07:32:08.867 | INFO     | trainers.base_trainer:train_epochs:171 - [rank=0] Start epoch: 0 End epoch: 8000, batch-size=8 | Niter/epo=1115 | log freq=1115, viz freq 446000, val freq 200 
+2024-02-19 07:32:35.223 | INFO     | datasets.pointflow_datasets:__init__:237 - [DATA] shape=(35708, 15000, 3), all_points_mean:=(35708, 1, 3), std=(35708, 1, 1), max=1.000, min=-1.000; num-pts=2048
+2024-02-19 07:32:35.226 | INFO     | datasets.pointflow_datasets:__init__:103 - [DATA] cat: all, split: val, full path: ./data/ShapeNetCore.v2.PC15k/; norm global=False, norm-box=True
+2024-02-19 07:32:35.232 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [405] under: ./data/ShapeNetCore.v2.PC15k/02691156/val 
+2024-02-19 07:32:35.281 | INFO     | datasets.pointflow_datasets:__init__:237 - [DATA] shape=(35708, 15000, 3), all_points_mean:=(35708, 1, 3), std=(35708, 1, 1), max=1.000, min=-1.000; num-pts=2048
+2024-02-19 07:32:35.282 | INFO     | datasets.pointflow_datasets:__init__:103 - [DATA] cat: all, split: val, full path: ./data/ShapeNetCore.v2.PC15k/; norm global=False, norm-box=True
+2024-02-19 07:32:35.283 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [405] under: ./data/ShapeNetCore.v2.PC15k/02691156/val 
+2024-02-19 07:32:35.530 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [8] under: ./data/ShapeNetCore.v2.PC15k/02773838/val 
+2024-02-19 07:32:35.530 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [8] under: ./data/ShapeNetCore.v2.PC15k/02773838/val 
+2024-02-19 07:32:35.539 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [11] under: ./data/ShapeNetCore.v2.PC15k/02801938/val 
+2024-02-19 07:32:35.539 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [11] under: ./data/ShapeNetCore.v2.PC15k/02801938/val 
+2024-02-19 07:32:35.547 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [85] under: ./data/ShapeNetCore.v2.PC15k/02808440/val 
+2024-02-19 07:32:35.547 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [85] under: ./data/ShapeNetCore.v2.PC15k/02808440/val 
+2024-02-19 07:32:35.607 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [23] under: ./data/ShapeNetCore.v2.PC15k/02818832/val 
+2024-02-19 07:32:35.608 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [23] under: ./data/ShapeNetCore.v2.PC15k/02818832/val 
+2024-02-19 07:32:35.611 | INFO     | datasets.pointflow_datasets:__init__:237 - [DATA] shape=(35708, 15000, 3), all_points_mean:=(35708, 1, 3), std=(35708, 1, 1), max=1.000, min=-1.000; num-pts=2048
+2024-02-19 07:32:35.612 | INFO     | datasets.pointflow_datasets:__init__:103 - [DATA] cat: all, split: val, full path: ./data/ShapeNetCore.v2.PC15k/; norm global=False, norm-box=True
+2024-02-19 07:32:35.614 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [405] under: ./data/ShapeNetCore.v2.PC15k/02691156/val 
+2024-02-19 07:32:35.628 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [185] under: ./data/ShapeNetCore.v2.PC15k/02828884/val 
+2024-02-19 07:32:35.627 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [185] under: ./data/ShapeNetCore.v2.PC15k/02828884/val 
+2024-02-19 07:32:35.700 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [43] under: ./data/ShapeNetCore.v2.PC15k/02876657/val 
+2024-02-19 07:32:35.705 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [43] under: ./data/ShapeNetCore.v2.PC15k/02876657/val 
+2024-02-19 07:32:35.723 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [17] under: ./data/ShapeNetCore.v2.PC15k/02880940/val 
+2024-02-19 07:32:35.723 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [17] under: ./data/ShapeNetCore.v2.PC15k/02880940/val 
+2024-02-19 07:32:35.737 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [94] under: ./data/ShapeNetCore.v2.PC15k/02924116/val 
+2024-02-19 07:32:35.737 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [94] under: ./data/ShapeNetCore.v2.PC15k/02924116/val 
+2024-02-19 07:32:35.754 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [8] under: ./data/ShapeNetCore.v2.PC15k/02773838/val 
+2024-02-19 07:32:35.757 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [11] under: ./data/ShapeNetCore.v2.PC15k/02801938/val 
+2024-02-19 07:32:35.761 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [85] under: ./data/ShapeNetCore.v2.PC15k/02808440/val 
+2024-02-19 07:32:35.792 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [23] under: ./data/ShapeNetCore.v2.PC15k/02818832/val 
+2024-02-19 07:32:35.797 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [152] under: ./data/ShapeNetCore.v2.PC15k/02933112/val 
+2024-02-19 07:32:35.797 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [152] under: ./data/ShapeNetCore.v2.PC15k/02933112/val 
+2024-02-19 07:32:35.805 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [185] under: ./data/ShapeNetCore.v2.PC15k/02828884/val 
+2024-02-19 07:32:35.862 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [43] under: ./data/ShapeNetCore.v2.PC15k/02876657/val 
+2024-02-19 07:32:35.877 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [17] under: ./data/ShapeNetCore.v2.PC15k/02880940/val 
+2024-02-19 07:32:35.882 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [94] under: ./data/ShapeNetCore.v2.PC15k/02924116/val 
+2024-02-19 07:32:35.896 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [34] under: ./data/ShapeNetCore.v2.PC15k/02747177/val 
+2024-02-19 07:32:35.898 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [34] under: ./data/ShapeNetCore.v2.PC15k/02747177/val 
+2024-02-19 07:32:35.910 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [152] under: ./data/ShapeNetCore.v2.PC15k/02933112/val 
+2024-02-19 07:32:35.918 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [11] under: ./data/ShapeNetCore.v2.PC15k/02942699/val 
+2024-02-19 07:32:35.918 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [11] under: ./data/ShapeNetCore.v2.PC15k/02942699/val 
+2024-02-19 07:32:35.924 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [5] under: ./data/ShapeNetCore.v2.PC15k/02954340/val 
+2024-02-19 07:32:35.925 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [5] under: ./data/ShapeNetCore.v2.PC15k/02954340/val 
+2024-02-19 07:32:35.929 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [352] under: ./data/ShapeNetCore.v2.PC15k/02958343/val 
+2024-02-19 07:32:35.929 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [352] under: ./data/ShapeNetCore.v2.PC15k/02958343/val 
+2024-02-19 07:32:35.954 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [34] under: ./data/ShapeNetCore.v2.PC15k/02747177/val 
+2024-02-19 07:32:35.964 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [11] under: ./data/ShapeNetCore.v2.PC15k/02942699/val 
+2024-02-19 07:32:35.967 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [5] under: ./data/ShapeNetCore.v2.PC15k/02954340/val 
+2024-02-19 07:32:35.969 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [352] under: ./data/ShapeNetCore.v2.PC15k/02958343/val 
+2024-02-19 07:32:36.056 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [662] under: ./data/ShapeNetCore.v2.PC15k/03001627/val 
+2024-02-19 07:32:36.057 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [662] under: ./data/ShapeNetCore.v2.PC15k/03001627/val 
+2024-02-19 07:32:36.074 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [662] under: ./data/ShapeNetCore.v2.PC15k/03001627/val 
+2024-02-19 07:32:36.580 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [65] under: ./data/ShapeNetCore.v2.PC15k/03046257/val 
+2024-02-19 07:32:36.580 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [65] under: ./data/ShapeNetCore.v2.PC15k/03046257/val 
+2024-02-19 07:32:36.583 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [65] under: ./data/ShapeNetCore.v2.PC15k/03046257/val 
+2024-02-19 07:32:36.631 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [9] under: ./data/ShapeNetCore.v2.PC15k/03207941/val 
+2024-02-19 07:32:36.631 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [9] under: ./data/ShapeNetCore.v2.PC15k/03207941/val 
+2024-02-19 07:32:36.632 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [9] under: ./data/ShapeNetCore.v2.PC15k/03207941/val 
+2024-02-19 07:32:36.643 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [112] under: ./data/ShapeNetCore.v2.PC15k/03211117/val 
+2024-02-19 07:32:36.643 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [112] under: ./data/ShapeNetCore.v2.PC15k/03211117/val 
+2024-02-19 07:32:36.643 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [112] under: ./data/ShapeNetCore.v2.PC15k/03211117/val 
+2024-02-19 07:32:36.738 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [842] under: ./data/ShapeNetCore.v2.PC15k/04379243/val 
+2024-02-19 07:32:36.740 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [842] under: ./data/ShapeNetCore.v2.PC15k/04379243/val 
+2024-02-19 07:32:36.742 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [842] under: ./data/ShapeNetCore.v2.PC15k/04379243/val 
+2024-02-19 07:32:37.332 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [23] under: ./data/ShapeNetCore.v2.PC15k/04401088/val 
+2024-02-19 07:32:37.332 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [23] under: ./data/ShapeNetCore.v2.PC15k/04401088/val 
+2024-02-19 07:32:37.335 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [23] under: ./data/ShapeNetCore.v2.PC15k/04401088/val 
+2024-02-19 07:32:37.354 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [13] under: ./data/ShapeNetCore.v2.PC15k/02946921/val 
+2024-02-19 07:32:37.354 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [13] under: ./data/ShapeNetCore.v2.PC15k/02946921/val 
+2024-02-19 07:32:37.354 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [13] under: ./data/ShapeNetCore.v2.PC15k/02946921/val 
+2024-02-19 07:32:37.370 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [13] under: ./data/ShapeNetCore.v2.PC15k/04460130/val 
+2024-02-19 07:32:37.370 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [13] under: ./data/ShapeNetCore.v2.PC15k/04460130/val 
+2024-02-19 07:32:37.370 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [13] under: ./data/ShapeNetCore.v2.PC15k/04460130/val 
+2024-02-19 07:32:37.380 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [39] under: ./data/ShapeNetCore.v2.PC15k/04468005/val 
+2024-02-19 07:32:37.384 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [39] under: ./data/ShapeNetCore.v2.PC15k/04468005/val 
+2024-02-19 07:32:37.384 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [39] under: ./data/ShapeNetCore.v2.PC15k/04468005/val 
+2024-02-19 07:32:37.406 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [6] under: ./data/ShapeNetCore.v2.PC15k/03085013/val 
+2024-02-19 07:32:37.406 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [6] under: ./data/ShapeNetCore.v2.PC15k/03085013/val 
+2024-02-19 07:32:37.406 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [6] under: ./data/ShapeNetCore.v2.PC15k/03085013/val 
+2024-02-19 07:32:37.411 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [7] under: ./data/ShapeNetCore.v2.PC15k/03261776/val 
+2024-02-19 07:32:37.411 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [7] under: ./data/ShapeNetCore.v2.PC15k/03261776/val 
+2024-02-19 07:32:37.411 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [7] under: ./data/ShapeNetCore.v2.PC15k/03261776/val 
+2024-02-19 07:32:37.418 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [75] under: ./data/ShapeNetCore.v2.PC15k/03325088/val 
+2024-02-19 07:32:37.418 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [75] under: ./data/ShapeNetCore.v2.PC15k/03325088/val 
+2024-02-19 07:32:37.419 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [75] under: ./data/ShapeNetCore.v2.PC15k/03325088/val 
+2024-02-19 07:32:37.467 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [30] under: ./data/ShapeNetCore.v2.PC15k/03337140/val 
+2024-02-19 07:32:37.467 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [30] under: ./data/ShapeNetCore.v2.PC15k/03337140/val 
+2024-02-19 07:32:37.479 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [30] under: ./data/ShapeNetCore.v2.PC15k/03337140/val 
+2024-02-19 07:32:37.489 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [80] under: ./data/ShapeNetCore.v2.PC15k/03467517/val 
+2024-02-19 07:32:37.489 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [80] under: ./data/ShapeNetCore.v2.PC15k/03467517/val 
+2024-02-19 07:32:37.489 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [80] under: ./data/ShapeNetCore.v2.PC15k/03467517/val 
+2024-02-19 07:32:37.550 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [16] under: ./data/ShapeNetCore.v2.PC15k/03513137/val 
+2024-02-19 07:32:37.550 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [16] under: ./data/ShapeNetCore.v2.PC15k/03513137/val 
+2024-02-19 07:32:37.550 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [16] under: ./data/ShapeNetCore.v2.PC15k/03513137/val 
+2024-02-19 07:32:37.563 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [64] under: ./data/ShapeNetCore.v2.PC15k/03593526/val 
+2024-02-19 07:32:37.563 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [64] under: ./data/ShapeNetCore.v2.PC15k/03593526/val 
+2024-02-19 07:32:37.564 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [64] under: ./data/ShapeNetCore.v2.PC15k/03593526/val 
+2024-02-19 07:32:37.622 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [43] under: ./data/ShapeNetCore.v2.PC15k/03624134/val 
+2024-02-19 07:32:37.622 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [43] under: ./data/ShapeNetCore.v2.PC15k/03624134/val 
+2024-02-19 07:32:37.622 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [43] under: ./data/ShapeNetCore.v2.PC15k/03624134/val 
+2024-02-19 07:32:37.652 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [232] under: ./data/ShapeNetCore.v2.PC15k/03636649/val 
+2024-02-19 07:32:37.652 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [232] under: ./data/ShapeNetCore.v2.PC15k/03636649/val 
+2024-02-19 07:32:37.654 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [232] under: ./data/ShapeNetCore.v2.PC15k/03636649/val 
+2024-02-19 07:32:37.824 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [45] under: ./data/ShapeNetCore.v2.PC15k/03642806/val 
+2024-02-19 07:32:37.824 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [45] under: ./data/ShapeNetCore.v2.PC15k/03642806/val 
+2024-02-19 07:32:37.824 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [45] under: ./data/ShapeNetCore.v2.PC15k/03642806/val 
+2024-02-19 07:32:37.861 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [158] under: ./data/ShapeNetCore.v2.PC15k/03691459/val 
+2024-02-19 07:32:37.861 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [158] under: ./data/ShapeNetCore.v2.PC15k/03691459/val 
+2024-02-19 07:32:37.863 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [158] under: ./data/ShapeNetCore.v2.PC15k/03691459/val 
+2024-02-19 07:32:37.989 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [10] under: ./data/ShapeNetCore.v2.PC15k/03710193/val 
+2024-02-19 07:32:37.989 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [10] under: ./data/ShapeNetCore.v2.PC15k/03710193/val 
+2024-02-19 07:32:37.989 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [10] under: ./data/ShapeNetCore.v2.PC15k/03710193/val 
+2024-02-19 07:32:38.002 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [7] under: ./data/ShapeNetCore.v2.PC15k/03759954/val 
+2024-02-19 07:32:38.002 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [7] under: ./data/ShapeNetCore.v2.PC15k/03759954/val 
+2024-02-19 07:32:38.004 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [7] under: ./data/ShapeNetCore.v2.PC15k/03759954/val 
+2024-02-19 07:32:38.009 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [15] under: ./data/ShapeNetCore.v2.PC15k/03761084/val 
+2024-02-19 07:32:38.009 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [15] under: ./data/ShapeNetCore.v2.PC15k/03761084/val 
+2024-02-19 07:32:38.010 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [15] under: ./data/ShapeNetCore.v2.PC15k/03761084/val 
+2024-02-19 07:32:38.025 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [34] under: ./data/ShapeNetCore.v2.PC15k/03790512/val 
+2024-02-19 07:32:38.025 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [34] under: ./data/ShapeNetCore.v2.PC15k/03790512/val 
+2024-02-19 07:32:38.025 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [34] under: ./data/ShapeNetCore.v2.PC15k/03790512/val 
+2024-02-19 07:32:38.053 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [22] under: ./data/ShapeNetCore.v2.PC15k/03797390/val 
+2024-02-19 07:32:38.053 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [22] under: ./data/ShapeNetCore.v2.PC15k/03797390/val 
+2024-02-19 07:32:38.053 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [22] under: ./data/ShapeNetCore.v2.PC15k/03797390/val 
+2024-02-19 07:32:38.071 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [24] under: ./data/ShapeNetCore.v2.PC15k/03928116/val 
+2024-02-19 07:32:38.072 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [24] under: ./data/ShapeNetCore.v2.PC15k/03928116/val 
+2024-02-19 07:32:38.076 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [24] under: ./data/ShapeNetCore.v2.PC15k/03928116/val 
+2024-02-19 07:32:38.096 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [9] under: ./data/ShapeNetCore.v2.PC15k/03938244/val 
+2024-02-19 07:32:38.096 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [9] under: ./data/ShapeNetCore.v2.PC15k/03938244/val 
+2024-02-19 07:32:38.096 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [9] under: ./data/ShapeNetCore.v2.PC15k/03938244/val 
+2024-02-19 07:32:38.107 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [26] under: ./data/ShapeNetCore.v2.PC15k/03948459/val 
+2024-02-19 07:32:38.107 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [26] under: ./data/ShapeNetCore.v2.PC15k/03948459/val 
+2024-02-19 07:32:38.107 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [26] under: ./data/ShapeNetCore.v2.PC15k/03948459/val 
+2024-02-19 07:32:38.130 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [61] under: ./data/ShapeNetCore.v2.PC15k/03991062/val 
+2024-02-19 07:32:38.130 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [61] under: ./data/ShapeNetCore.v2.PC15k/03991062/val 
+2024-02-19 07:32:38.131 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [61] under: ./data/ShapeNetCore.v2.PC15k/03991062/val 
+2024-02-19 07:32:38.189 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [16] under: ./data/ShapeNetCore.v2.PC15k/04004475/val 
+2024-02-19 07:32:38.189 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [16] under: ./data/ShapeNetCore.v2.PC15k/04004475/val 
+2024-02-19 07:32:38.189 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [16] under: ./data/ShapeNetCore.v2.PC15k/04004475/val 
+2024-02-19 07:32:38.205 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [6] under: ./data/ShapeNetCore.v2.PC15k/04074963/val 
+2024-02-19 07:32:38.205 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [6] under: ./data/ShapeNetCore.v2.PC15k/04074963/val 
+2024-02-19 07:32:38.205 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [6] under: ./data/ShapeNetCore.v2.PC15k/04074963/val 
+2024-02-19 07:32:38.214 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [242] under: ./data/ShapeNetCore.v2.PC15k/04090263/val 
+2024-02-19 07:32:38.214 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [242] under: ./data/ShapeNetCore.v2.PC15k/04090263/val 
+2024-02-19 07:32:38.214 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [242] under: ./data/ShapeNetCore.v2.PC15k/04090263/val 
+2024-02-19 07:32:38.395 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [9] under: ./data/ShapeNetCore.v2.PC15k/04099429/val 
+2024-02-19 07:32:38.395 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [9] under: ./data/ShapeNetCore.v2.PC15k/04099429/val 
+2024-02-19 07:32:38.395 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [9] under: ./data/ShapeNetCore.v2.PC15k/04099429/val 
+2024-02-19 07:32:38.404 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [15] under: ./data/ShapeNetCore.v2.PC15k/04225987/val 
+2024-02-19 07:32:38.404 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [15] under: ./data/ShapeNetCore.v2.PC15k/04225987/val 
+2024-02-19 07:32:38.404 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [15] under: ./data/ShapeNetCore.v2.PC15k/04225987/val 
+2024-02-19 07:32:38.418 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [330] under: ./data/ShapeNetCore.v2.PC15k/04256520/val 
+2024-02-19 07:32:38.419 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [330] under: ./data/ShapeNetCore.v2.PC15k/04256520/val 
+2024-02-19 07:32:38.420 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [330] under: ./data/ShapeNetCore.v2.PC15k/04256520/val 
+2024-02-19 07:32:38.642 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [22] under: ./data/ShapeNetCore.v2.PC15k/04330267/val 
+2024-02-19 07:32:38.642 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [22] under: ./data/ShapeNetCore.v2.PC15k/04330267/val 
+2024-02-19 07:32:38.643 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [22] under: ./data/ShapeNetCore.v2.PC15k/04330267/val 
+2024-02-19 07:32:38.652 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [194] under: ./data/ShapeNetCore.v2.PC15k/04530566/val 
+2024-02-19 07:32:38.654 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [194] under: ./data/ShapeNetCore.v2.PC15k/04530566/val 
+2024-02-19 07:32:38.655 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [194] under: ./data/ShapeNetCore.v2.PC15k/04530566/val 
+2024-02-19 07:32:38.796 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [17] under: ./data/ShapeNetCore.v2.PC15k/04554684/val 
+2024-02-19 07:32:38.796 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [17] under: ./data/ShapeNetCore.v2.PC15k/04554684/val 
+2024-02-19 07:32:38.797 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [17] under: ./data/ShapeNetCore.v2.PC15k/04554684/val 
+2024-02-19 07:32:38.810 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [83] under: ./data/ShapeNetCore.v2.PC15k/02992529/val 
+2024-02-19 07:32:38.810 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [83] under: ./data/ShapeNetCore.v2.PC15k/02992529/val 
+2024-02-19 07:32:38.810 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [83] under: ./data/ShapeNetCore.v2.PC15k/02992529/val 
+2024-02-19 07:32:38.882 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [7] under: ./data/ShapeNetCore.v2.PC15k/02843684/val 
+2024-02-19 07:32:38.882 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [7] under: ./data/ShapeNetCore.v2.PC15k/02843684/val 
+2024-02-19 07:32:38.882 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [7] under: ./data/ShapeNetCore.v2.PC15k/02843684/val 
+2024-02-19 07:32:38.889 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [50] under: ./data/ShapeNetCore.v2.PC15k/02871439/val 
+2024-02-19 07:32:38.890 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [50] under: ./data/ShapeNetCore.v2.PC15k/02871439/val 
+2024-02-19 07:32:38.890 | INFO     | datasets.pointflow_datasets:__init__:148 - [DATA] number of file [50] under: ./data/ShapeNetCore.v2.PC15k/02871439/val 
+2024-02-19 07:32:38.931 | INFO     | datasets.pointflow_datasets:__init__:164 - [DATA] Load data time: 3.6s | dir: ['02691156', '02773838', '02801938', '02808440', '02818832', '02828884', '02876657', '02880940', '02924116', '02933112', '02747177', '02942699', '02954340', '02958343', '03001627', '03046257', '03207941', '03211117', '04379243', '04401088', '02946921', '04460130', '04468005', '03085013', '03261776', '03325088', '03337140', '03467517', '03513137', '03593526', '03624134', '03636649', '03642806', '03691459', '03710193', '03759954', '03761084', '03790512', '03797390', '03928116', '03938244', '03948459', '03991062', '04004475', '04074963', '04090263', '04099429', '04225987', '04256520', '04330267', '04530566', '04554684', '02992529', '02843684', '02871439'] | sample_with_replacement: 1; num points: 5158
+2024-02-19 07:32:38.931 | INFO     | datasets.pointflow_datasets:__init__:164 - [DATA] Load data time: 3.3s | dir: ['02691156', '02773838', '02801938', '02808440', '02818832', '02828884', '02876657', '02880940', '02924116', '02933112', '02747177', '02942699', '02954340', '02958343', '03001627', '03046257', '03207941', '03211117', '04379243', '04401088', '02946921', '04460130', '04468005', '03085013', '03261776', '03325088', '03337140', '03467517', '03513137', '03593526', '03624134', '03636649', '03642806', '03691459', '03710193', '03759954', '03761084', '03790512', '03797390', '03928116', '03938244', '03948459', '03991062', '04004475', '04074963', '04090263', '04099429', '04225987', '04256520', '04330267', '04530566', '04554684', '02992529', '02843684', '02871439'] | sample_with_replacement: 1; num points: 5158
+2024-02-19 07:32:38.931 | INFO     | datasets.pointflow_datasets:__init__:164 - [DATA] Load data time: 3.7s | dir: ['02691156', '02773838', '02801938', '02808440', '02818832', '02828884', '02876657', '02880940', '02924116', '02933112', '02747177', '02942699', '02954340', '02958343', '03001627', '03046257', '03207941', '03211117', '04379243', '04401088', '02946921', '04460130', '04468005', '03085013', '03261776', '03325088', '03337140', '03467517', '03513137', '03593526', '03624134', '03636649', '03642806', '03691459', '03710193', '03759954', '03761084', '03790512', '03797390', '03928116', '03938244', '03948459', '03991062', '04004475', '04074963', '04090263', '04099429', '04225987', '04256520', '04330267', '04530566', '04554684', '02992529', '02843684', '02871439'] | sample_with_replacement: 1; num points: 5158
+2024-02-19 07:32:52.278 | INFO     | datasets.pointflow_datasets:__init__:237 - [DATA] shape=(5158, 15000, 3), all_points_mean:=(5158, 1, 3), std=(5158, 1, 1), max=1.000, min=-1.000; num-pts=2048
+2024-02-19 07:32:52.281 | INFO     | datasets.pointflow_datasets:get_data_loaders:412 - [Batch Size] train=8, test=10; drop-last=1
+2024-02-19 07:32:52.286 | INFO     | trainers.hvae_trainer:__init__:75 - done init trainer @cuda:2
+2024-02-19 07:32:53.301 | INFO     | trainers.base_trainer:prepare_vis_data:674 - [prepare_vis_data] len of train_loader: 1115
+2024-02-19 07:32:53.426 | INFO     | datasets.pointflow_datasets:__init__:237 - [DATA] shape=(5158, 15000, 3), all_points_mean:=(5158, 1, 3), std=(5158, 1, 1), max=1.000, min=-1.000; num-pts=2048
+2024-02-19 07:32:53.429 | INFO     | datasets.pointflow_datasets:get_data_loaders:412 - [Batch Size] train=8, test=10; drop-last=1
+2024-02-19 07:32:53.437 | INFO     | trainers.hvae_trainer:__init__:75 - done init trainer @cuda:1
+2024-02-19 07:32:54.202 | INFO     | trainers.base_trainer:prepare_vis_data:689 - tr_x: torch.Size([16, 2048, 3]), m_pcs: torch.Size([16, 1, 3]), s_pcs: torch.Size([16, 1, 1]), val_x: torch.Size([16, 2048, 3])
+2024-02-19 07:32:54.226 | INFO     | __main__:main:33 - param size = 22.402731M 
+2024-02-19 07:32:54.227 | INFO     | __main__:main:55 - not find any checkpoint: exp/0219/all/5c4984h_hvae_lion_B8/checkpoints, (exist=False), or snapshot exp/0219/all/5c4984h_hvae_lion_B8/checkpoints/snapshot, (exist=False)
+2024-02-19 07:32:54.227 | INFO     | trainers.base_trainer:train_epochs:171 - [rank=2] Start epoch: 0 End epoch: 8000, batch-size=8 | Niter/epo=1115 | log freq=1115, viz freq 446000, val freq 200 
+2024-02-19 07:32:54.372 | INFO     | datasets.pointflow_datasets:__init__:237 - [DATA] shape=(5158, 15000, 3), all_points_mean:=(5158, 1, 3), std=(5158, 1, 1), max=1.000, min=-1.000; num-pts=2048
+2024-02-19 07:32:54.374 | INFO     | datasets.pointflow_datasets:get_data_loaders:412 - [Batch Size] train=8, test=10; drop-last=1
+2024-02-19 07:32:54.380 | INFO     | trainers.hvae_trainer:__init__:75 - done init trainer @cuda:3
+2024-02-19 07:32:54.645 | INFO     | trainers.base_trainer:prepare_vis_data:674 - [prepare_vis_data] len of train_loader: 1115
+2024-02-19 07:32:55.596 | INFO     | trainers.base_trainer:prepare_vis_data:674 - [prepare_vis_data] len of train_loader: 1115
+2024-02-19 07:32:55.873 | INFO     | trainers.base_trainer:prepare_vis_data:689 - tr_x: torch.Size([16, 2048, 3]), m_pcs: torch.Size([16, 1, 3]), s_pcs: torch.Size([16, 1, 1]), val_x: torch.Size([16, 2048, 3])
+2024-02-19 07:32:55.894 | INFO     | __main__:main:33 - param size = 22.402731M 
+2024-02-19 07:32:55.895 | INFO     | __main__:main:55 - not find any checkpoint: exp/0219/all/5c4984h_hvae_lion_B8/checkpoints, (exist=False), or snapshot exp/0219/all/5c4984h_hvae_lion_B8/checkpoints/snapshot, (exist=False)
+2024-02-19 07:32:55.895 | INFO     | trainers.base_trainer:train_epochs:171 - [rank=1] Start epoch: 0 End epoch: 8000, batch-size=8 | Niter/epo=1115 | log freq=1115, viz freq 446000, val freq 200 
+2024-02-19 07:32:56.716 | INFO     | trainers.base_trainer:prepare_vis_data:689 - tr_x: torch.Size([16, 2048, 3]), m_pcs: torch.Size([16, 1, 3]), s_pcs: torch.Size([16, 1, 1]), val_x: torch.Size([16, 2048, 3])
+2024-02-19 07:32:56.735 | INFO     | __main__:main:33 - param size = 22.402731M 
+2024-02-19 07:32:56.735 | INFO     | __main__:main:55 - not find any checkpoint: exp/0219/all/5c4984h_hvae_lion_B8/checkpoints, (exist=False), or snapshot exp/0219/all/5c4984h_hvae_lion_B8/checkpoints/snapshot, (exist=False)
+2024-02-19 07:32:56.737 | INFO     | trainers.base_trainer:train_epochs:171 - [rank=3] Start epoch: 0 End epoch: 8000, batch-size=8 | Niter/epo=1115 | log freq=1115, viz freq 446000, val freq 200 
+2024-02-19 07:33:09.936 | INFO     | trainers.common_fun:validate_inspect_noprior:104 - writer: none
+2024-02-19 07:33:10.680 | INFO     | trainers.base_trainer:train_epochs:217 - [R0] | E0 iter[  1/1115] | [Loss] 619.53 | [exp] exp/0219/all/5c4984h_hvae_lion_B8 | [step]     1 | [url] none 

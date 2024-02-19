@@ -4,7 +4,6 @@ from loguru import logger
 import torch
 import os
 import sys
-import torch.distributed as dist
 from torch.multiprocessing import Process
 from default_config import cfg as config
 from utils import exp_helper, io_helper
@@ -89,7 +88,7 @@ def main(args, config):
 def get_args():
     parser = argparse.ArgumentParser('encoder decoder examiner')
     # experimental results
-    parser.add_argument('--exp_root', type=str, default='../exp',
+    parser.add_argument('--exp_root', type=str, default='exp',
                         help='location of the results')
     parser.add_argument('--skip_sample', type=int, default=0,
                         help='only eval nll, no sampling')
@@ -156,7 +155,7 @@ def get_args():
     config.merge_from_list(args.opt)
 
     # Create log_name
-    EXP_ROOT = args.exp_root  # os.environ.get('EXP_ROOT', '../exp/')
+    EXP_ROOT = args.exp_root
     if config.exp_name == '' or config.exp_name == 'none':
         config.hash = io_helper.hash_str('%s' % config) + 'h'
         cfg_file_name = exp_helper.get_expname(config)

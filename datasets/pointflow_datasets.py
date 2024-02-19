@@ -1,14 +1,4 @@
-# Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-#
-# NVIDIA CORPORATION & AFFILIATES and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION & AFFILIATES is strictly prohibited.
-
-""" copied and modified from https://github.com/stevenygd/PointFlow/blob/master/datasets.py """
 import os
-import open3d as o3d
 import time
 import torch
 import numpy as np
@@ -16,13 +6,10 @@ from loguru import logger
 from torch.utils.data import Dataset
 from torch.utils import data
 import random
-import tqdm
 from datasets.data_path import get_path
 from PIL import Image
 OVERFIT = 0
 
-# taken from https://github.com/optas/latent_3d_points/blob/
-# 8e8f29f8124ed5fc59439e8551ba7ef7567c9a37/src/in_out.py
 synsetid_to_cate = {
     '02691156': 'airplane',
     '02773838': 'bag',
@@ -79,8 +66,6 @@ synsetid_to_cate = {
     '02992529': 'cellphone',
     '02843684': 'birdhouse',
     '02871439': 'bookshelf',
-    # '02858304': 'boat', no boat in our dataset, merged into vessels
-    # '02834778': 'bicycle', not in our taxonomy
 }
 cate_to_synsetid = {v: k for k, v in synsetid_to_cate.items()}
 
@@ -126,12 +111,8 @@ class ShapeNet15kPointClouds(Dataset):
             categories = [categories]
         self.cates = categories
 
-        if 'all' in categories:
-            self.synset_ids = list(cate_to_synsetid.values())
-        else:
-            self.synset_ids = [cate_to_synsetid[c] for c in self.cates]
+        self.synset_ids = list(cate_to_synsetid.values())
         subdirs = self.synset_ids
-        # assert 'v2' in root_dir, "Only supporting v2 right now."
         self.gravity_axis = 1
         self.display_axis_order = [0, 2, 1]
 
@@ -150,7 +131,6 @@ class ShapeNet15kPointClouds(Dataset):
         self.all_points = []
         tic = time.time()
         for cate_idx, subd in enumerate(self.subdirs):
-            # NOTE: [subd] here is synset id
             sub_path = os.path.join(root_dir, subd, self.split)
             if not os.path.isdir(sub_path):
                 print("Directory missing : %s " % (sub_path))
@@ -167,17 +147,11 @@ class ShapeNet15kPointClouds(Dataset):
 
                 logger.info('[DATA] number of file [{}] under: {} ',
                             len(os.listdir(sub_path)), sub_path)
-                # NOTE: [mid] contains the split: i.e. "train/<mid>"
-                # or "val/<mid>" or "test/<mid>"
                 all_mids = sorted(all_mids)
                 for mid in all_mids:
-                    # obj_fname = os.path.join(sub_path, x)
                     if self.clip_forge_enable:
                         synset_id = subd
                         render_img_path = os.path.join(img_path, synset_id, mid.split('/')[-1], 'img_choy2016')
-                        
-                        #render_img_path = os.path.join(img_path, synset_id, mid.split('/')[-1])
-                        #if not (os.path.exists(render_img_path)): continue
                         self.img_path.append(render_img_path)
                         assert(os.path.exists(render_img_path)), f'render img path not find: {render_img_path}'
 
@@ -268,7 +242,6 @@ class ShapeNet15kPointClouds(Dataset):
         if OVERFIT:
             self.all_points = self.all_points[:40]
 
-        # TODO: why do we need this??
         self.train_points = self.all_points[:, :min(
             10000, self.all_points.shape[1])]  # subsample 15k points to 10k points per shape
         self.tr_sample_size = min(10000, tr_sample_size)
@@ -301,7 +274,6 @@ class ShapeNet15kPointClouds(Dataset):
             self.all_points_std
         self.train_points = self.all_points[:, :min(
             10000, self.all_points.shape[1])]
-        ## self.test_points = self.all_points[:, 10000:]
 
     def __len__(self):
         return len(self.train_points)
