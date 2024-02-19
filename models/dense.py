@@ -1,13 +1,3 @@
-# Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-#
-# NVIDIA CORPORATION & AFFILIATES and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION & AFFILIATES is strictly prohibited.
-
-""" copied and modified from https://github.com/CW-Huang/sdeflow-light/blob/524650bc5ad69522b3e0905672deef0650374512/lib/models/unet.py """
-
 import math
 import torch
 import torch.nn as nn
@@ -50,7 +40,6 @@ def kaiming_uniform_(tensor, gain=1., mode='fan_in'):
         >>> nn.init.kaiming_uniform_(w, mode='fan_in')
     """
     fan = _calculate_correct_fan(tensor, mode)
-    # gain = calculate_gain(nonlinearity, a)
     var = gain / max(1., fan)
     bound = math.sqrt(3.0 * var)  # Calculate uniform bounds from standard deviation
     with torch.no_grad():

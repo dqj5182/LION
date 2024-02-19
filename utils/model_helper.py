@@ -9,7 +9,6 @@ import torch
 import torch.nn.functional as F
 from loguru import logger
 import torch
-from torch.autograd import grad
 import importlib
 from utils.evaluation_metrics_fast import distChamferCUDA, emd_approx, distChamferCUDA_l1
 
@@ -108,7 +107,6 @@ def import_model(model_str):
     mod = importlib.import_module(p)
     Model = getattr(mod, m)
     return Model
-    ## self.encoder = Model(zdim=latent_dim, input_dim=args.ddpm.input_dim, args=args)
 
 
 class DataParallelPassthrough(torch.nn.parallel.DistributedDataParallel):

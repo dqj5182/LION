@@ -26,17 +26,6 @@ def parse_cfg_str(cfg_str):
         cfg_expand_list.append(v)
     return cfg_expand_list
 
-    ##cfg_dict = {}
-    # if cfg_str == '':
-    # return cfg_dict
-    ##cfg_str_list = cfg_str.split(',')
-    # for p in cfg_str_list:
-    ##    kvs = p.split('=')
-    ##    assert(len(kvs) == 2), f'wrong format, expect k1=v1 for {p}'
-    ##    k, v = kvs
-    ##    cfg_dict[k] = v
-    # return cfg_dict
-
 
 def readable_size(num_bytes: int) -> str:
     return '' if isnan(num_bytes) else '{:.1f}'.format(calmsize(num_bytes))
@@ -79,9 +68,6 @@ def get_evalname(config):
     tag = ''
     if config.ddpm.model_var_type != 'fixedlarge':
         tag += config.ddpm.model_var_type
-
-    if not config.ddpm.ema:
-        tag += 'noema'
     tag += f"s{config.trainer.seed}"
     if config.data.te_max_sample_points != 2048:
         tag += 'N%d' % config.data.te_max_sample_points

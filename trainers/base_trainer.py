@@ -1,14 +1,6 @@
-# Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-#
-# NVIDIA CORPORATION & AFFILIATES and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION & AFFILIATES is strictly prohibited.
 import os
 import time
 from abc import ABC, abstractmethod
-from comet_ml import Experiment
 import torch
 import importlib
 import numpy as np
@@ -21,7 +13,6 @@ from utils.checker import *
 from utils.vis_helper import visualize_point_clouds_3d
 from utils.eval_helper import compute_score, get_ref_pt, get_ref_num
 from utils import model_helper, exp_helper, data_helper
-from utils.utils import infer_active_variables 
 from utils.data_helper import normalize_point_clouds
 from utils.eval_helper import compute_NLL_metric
 from utils.utils import AvgrageMeter
@@ -712,16 +703,11 @@ class BaseTrainer(ABC):
         logger.info('no other module to build')
         pass
 
-    def swap_vae_param_if_need(self):
-        if self.cfg.ddpm.ema:
-            self.optimizer.swap_parameters_with_ema(store_params_in_ema=True)
-
     # -- shared method for all model with vae component -- #
     @torch.no_grad()
     def eval_nll(self, step, ntest=None, save_file=False):
         loss_dict = {}
         cfg = self.cfg
-        self.swap_vae_param_if_need() # if using EMA, load the ema weight
         args = self.args
         device = torch.device('cuda:%d' % args.local_rank)
         tag = exp_helper.get_evalname(self.cfg)
@@ -815,7 +801,6 @@ class BaseTrainer(ABC):
                 self.writer.add_scalar('eval/%s' % (n), v, step)
             if 'CD' in n:
                 score = v
-        self.swap_vae_param_if_need()  # if using EMA, swap back to none-ema weight here
         return score
 
     def prepare_clip_model_data(self):

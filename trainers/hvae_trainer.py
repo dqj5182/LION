@@ -1,29 +1,11 @@
-# Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-#
-# NVIDIA CORPORATION & AFFILIATES and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION & AFFILIATES is strictly prohibited.
-""" to train hierarchical VAE model 
-this trainer only train the vae without prior 
-"""
-import os
-import sys
 import torch
-import torch.nn.functional as F
-import numpy as np
 from loguru import logger
 import torch.distributed as dist
 from trainers.base_trainer import BaseTrainer
-from utils.eval_helper import compute_NLL_metric
-from utils import model_helper, exp_helper, data_helper
 from utils.checker import *
 from utils import utils
 from trainers.common_fun import validate_inspect_noprior
 from torch.cuda.amp import autocast, GradScaler
-import third_party.pvcnn.functional as pvcnn_fn
-from calmsize import size as calmsize
 
 
 class Trainer(BaseTrainer):
@@ -117,7 +99,6 @@ class Trainer(BaseTrainer):
             lossv = loss.detach().cpu().item()
 
         if not no_update:
-
             self.grad_scalar.scale(loss).backward()
             utils.average_gradients(self.model.parameters(),
                                     self.args.distributed)
@@ -147,10 +128,6 @@ class Trainer(BaseTrainer):
         for k, v in res.items():
             if 'vis/' in k or 'msg/' in k:
                 output[k] = v
-        # if 'x_ref_pred' in res:
-        #     output['x_ref_pred'] = res['x_ref_pred'].detach().cpu()
-        # if 'x_ref_pred_input' in res:
-        #     output['x_ref_pred_input'] = res['x_ref_pred_input'].detach().cpu()
         return output
     # --------------------------------------------- #
     #   visulization function and sampling function #
@@ -187,8 +164,6 @@ class Trainer(BaseTrainer):
                for_vis=True, use_ddim=False, save_file=None, ddim_step=500):
         """ return the final samples in shape [B,3,N] """
         # switch to EMA parameters
-        if self.cfg.ddpm.ema:
-            self.optimizer.swap_parameters_with_ema(store_params_in_ema=True)
         self.model.eval()
 
         # ---- forward sampling ---- #
@@ -197,8 +172,4 @@ class Trainer(BaseTrainer):
         # gen_x: BNC
         CHECKEQ(gen_x.shape[2], self.cfg.ddpm.input_dim)
         traj = gen_x.permute(0, 2, 1).contiguous()  # BN3->B3N
-
-        # switch back to original parameters
-        if self.cfg.ddpm.ema:
-            self.optimizer.swap_parameters_with_ema(store_params_in_ema=True)
         return traj

@@ -6,7 +6,7 @@ fi
 DATA=" ddpm.input_dim 3 data.cates all "
 NGPU=$1 # 
 num_node=1
-BS=32 
+BS=6 #8 
 total_bs=$(( $NGPU * $BS ))
 if (( $total_bs > 128 )); then 
     echo "[WARNING] total batch_size larger than 128 may lead to unstable training, please reduce the size"
@@ -14,7 +14,7 @@ if (( $total_bs > 128 )); then
 fi
 
 ENT="python train_dist.py --num_process_per_node $NGPU "
-kl=0.5  
+kl=0.1 #0.5  
 lr=1e-3
 latent=1
 skip_weight=0.01 
@@ -45,4 +45,4 @@ $ENT ddpm.num_steps 1 ddpm.ema 0 \
     shapelatent.decoder_num_points 2048 \
     data.tr_max_sample_points 2048 data.te_max_sample_points 2048 \
     ddpm.loss_type $loss cmt "lion" \
-    $DATA viz.viz_order [2,0,1] data.recenter_per_shape False data.normalize_global False data.normalize_shape_box True #True 
+    $DATA viz.viz_order [2,0,1] data.recenter_per_shape False data.normalize_global False data.normalize_shape_box True

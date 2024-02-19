@@ -1,20 +1,9 @@
-# Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-#
-# NVIDIA CORPORATION & AFFILIATES and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION & AFFILIATES is strictly prohibited.
-"""copied and modified from https://github.com/NVlabs/LSGM/blob/5eae2f385c014f2250c3130152b6be711f6a3a5a/util/utils.py"""
 from loguru import logger
-from comet_ml import Experiment, ExistingExperiment
+from comet_ml import Experiment
 import wandb as WB
 import os
-import math
 import shutil
 import json
-import time
-import sys
 import types
 from PIL import Image
 import torch
@@ -22,7 +11,7 @@ import torch.nn as nn
 import numpy as np
 from torch import optim
 import torch.distributed as dist
-from torch.cuda.amp import autocast, GradScaler
+from torch.cuda.amp import autocast
 USE_COMET = int(os.environ.get('USE_COMET', 1))
 USE_TFB = int(os.environ.get('USE_TFB', 0))
 USE_WB = int(os.environ.get('USE_WB', 0))
@@ -472,38 +461,11 @@ def common_init(rank, seed, save_dir, comet_key=''):
     torch.backends.cudnn.benchmark = True
 
     # prepare logging and tensorboard summary
-    #logging = Logger(rank, save_dir)
     logging = None
     if rank == 0:
-        if os.path.exists('.comet_api'):
-            comet_args = json.load(open('.comet_api', 'r'))
-            exp = Experiment(display_summary_level=0,
-                             disabled=USE_COMET == 0,
-                             **comet_args)
-            exp.set_name(save_dir.split('exp/')[-1])
-            exp.set_cmd_args()
-            exp.log_code(folder='./models/')
-            exp.log_code(folder='./trainers/')
-            exp.log_code(folder='./utils/')
-            exp.log_code(folder='./datasets/')
-        else:
-            exp = None
+        exp = None
 
-        if os.path.exists('.wandb_api'):
-            wb_args = json.load(open('.wandb_api', 'r'))
-            wb_dir = '../exp/wandb/' if not os.path.exists(
-                '/workspace/result') else '/workspace/result/wandb/'
-            if not os.path.exists(wb_dir):
-                os.makedirs(wb_dir)
-            WB.init(
-                project=wb_args['project'],
-                entity=wb_args['entity'],
-                name=save_dir.split('exp/')[-1],
-                dir=wb_dir
-            )
-            wandb = True
-        else:
-            wandb = False
+        wandb = False
     else:
         exp = None
         wandb = False

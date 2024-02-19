@@ -1,14 +1,5 @@
-# Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-#
-# NVIDIA CORPORATION & AFFILIATES and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION & AFFILIATES is strictly prohibited.
 import torch
-import numpy as np 
 from loguru import logger
-import importlib
 import torch.nn as nn  
 from .distributions import Normal
 from utils.model_helper import import_model 
@@ -54,7 +45,6 @@ class Model(nn.Module):
 
     @torch.no_grad()
     def encode(self, x, class_label=None):
-        batch_size, _, point_dim = x.size()
         assert(x.shape[2] == self.input_dim), f'expect input in ' \
             f'[B,Npoint,PointDim={self.input_dim}], get: {x.shape}'
         x_0_target = x 
@@ -103,8 +93,6 @@ class Model(nn.Module):
         return [eps_style, eps_local] 
 
     def encode_global(self, x, class_label=None):
-        
-        batch_size, N, point_dim = x.size()
         if self.args.data.cond_on_cat:
             assert(class_label is not None), f'require class label input for cond on cat'
             cls_emb = self.class_embedding(class_label) 
@@ -215,7 +203,6 @@ class Model(nn.Module):
         Args:
             x:  Input point clouds, (B, N, d).
         """
-        ## kl_weight = self.kl_weight
         if self.args.trainer.anneal_kl and self.num_total_iter > 0: 
             global_step = it 
             kl_weight = helper.kl_coeff(step=global_step,
@@ -227,7 +214,6 @@ class Model(nn.Module):
             kl_weight = self.kl_weight
 
         batch_size = x.shape[0]
-        # CHECKDIM(x, 2, self.input_dim)
         assert(x.shape[2] == self.input_dim)
         
         inputs = noisy_input if noisy_input is not None else x  
@@ -241,7 +227,6 @@ class Model(nn.Module):
         output['rec_loss'] = rec_loss 
 
         # Loss
-        ## z_global, z_sigma, z_mu = output['z_global'], output['z_sigma'], output['z_mu']
         kl_term_list = []
         weighted_kl_terms = []
         for pairs_id, pairs in enumerate(output['latent_list']):
@@ -278,7 +263,6 @@ class Model(nn.Module):
             output['print/kl_%d'%pairs_id] = kl_term_close
             output['print/z_mean_%d'%pairs_id] = cmu.mean() 
             output['print/z_mag_%d'%pairs_id]  = cmu.abs().max() 
-            # logger.info('log_sigma: {}, mean: {}', log_sigma.shape, (log_sigma.exp()**2).mean())
             output['print/z_var_%d'%pairs_id]  = (log_sigma).exp()**2 
             output['print/z_logsigma_%d'%pairs_id] = log_sigma
             output['print/kl_weight'] = kl_weight 
@@ -304,8 +288,6 @@ class Model(nn.Module):
         Return: 
             model_output: [B,N,D]
         """ 
-        batch_size = num_samples 
-        center_emd = None 
         if 'LatentPoint' in self.args.shapelatent.decoder_type:
             # Latent Point Model: latent shape; B; ND 
             latent_shape = (num_samples, self.num_points*(self.latent_dim+self.input_dim))
@@ -329,7 +311,6 @@ class Model(nn.Module):
         style = self.style_mlp(style) if self.style_mlp is not None else style  
         x_0_pred = self.decoder(None, beta=None, 
                 context=z_local, style=z_global) # (B,ncenter,3) 
-        ## CHECKSIZE(x_0_pred, (batch_size,self.num_points,[3,6])) 
         return x_0_pred 
 
     def latent_shape(self):

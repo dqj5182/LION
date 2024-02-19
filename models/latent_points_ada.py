@@ -1,11 +1,3 @@
-# Copyright (c) 2022, NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
-#
-# NVIDIA CORPORATION & AFFILIATES and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION & AFFILIATES is strictly prohibited.
-
 import torch 
 from loguru import logger 
 import torch.nn as nn 
@@ -47,7 +39,6 @@ class PVCNN2Unet(nn.Module):
         assert extra_feature_channels >= 0
         self.time_emb_scales = time_emb_scales
         self.embed_dim = embed_dim
-        ## assert(self.embed_dim == 0)
         if self.embed_dim > 0: # has time embedding 
             # for prior model, we have time embedding, for VAE model, no time embedding 
             self.embedf = nn.Sequential(

@@ -11,16 +11,12 @@ copied and modified from source:
     and functions under 
     https://github.com/alexzhou907/PVD/tree/9747265a5f141e5546fd4f862bfa66aa59f1bd33/modules 
 """
-import copy
 import functools
-from loguru import logger
 from einops import rearrange
 import torch.nn as nn
 import torch
-import numpy as np
 import third_party.pvcnn.functional as F
-# from utils.checker import *
-from torch.cuda.amp import autocast, GradScaler, custom_fwd, custom_bwd 
+from torch.cuda.amp import custom_fwd, custom_bwd 
 from .adagn import AdaGN 
 import os 
 quiet = int(os.environ.get('quiet', 0))
