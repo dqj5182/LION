@@ -6,7 +6,7 @@ fi
 DATA=" ddpm.input_dim 3 data.cates all "
 NGPU=$1 # 
 num_node=1
-BS=4 #32 
+BS=8 #32 
 total_bs=$(( $NGPU * $BS ))
 if (( $total_bs > 128 )); then 
     echo "[WARNING] total batch_size larger than 128 may lead to unstable training, please reduce the size"

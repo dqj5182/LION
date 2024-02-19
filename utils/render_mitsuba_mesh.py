@@ -33,8 +33,6 @@ def standardize_to_same_range(ref, src):
         c = (c - c.min()) / (c.max() - c.min()) 
         c = c*r + min_p # same range 
         pt_i[:, i] = c 
-        #logger.info('pts: i{}= {}, {}, {}', i, pt_i[:, i].min(), pt_i[:, i].max(), pt_i[:, i].mean())
-        #logger.info('pts: i{}= {}, {}, {}', i, pcl[:, i].min(), pcl[:, i].max(), pcl[:, i].mean())
     return pt_i 
     
 
@@ -58,7 +56,6 @@ def reformat_ply(input, output, r=0, is_point_flow_data=0,
     R = m.get_rotation_matrix_from_xyz((0, 0, - r * np.pi / 2))
     mesh_r = copy.deepcopy(m)
     mesh_r.rotate(R, center=(0, 0, 0))
-    ## o3d.visualization.draw_geometries([mesh_r])
     open3d.io.write_triangle_mesh(output, mesh_r, write_ascii=ascii, write_vertex_normals=False) 
     if fixed_trimesh:
         mesh = trimesh.load_mesh(output) ## '../models/featuretype.STL') 

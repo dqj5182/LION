@@ -36,7 +36,6 @@ def standardize_bbox_based_on(pcl, eps):
 # PATH_TO_NPY = 'pcl_ex.npy' # the tensor to load
 def rotate_pts(pts, r, axis=1, do_transform=0, is_point_flow_data=1, eps=None):
     assert(len(pts.shape) == 2), f'require N,3 tensor, get: {pts.shape}'
-    ## logger.info('rotating pts: {}, get eps: {} ', pts.shape, eps is not None )
     is_tensor = torch.is_tensor(pts) 
     if not is_tensor:
         pts = torch.from_numpy(pts) 
@@ -78,10 +77,6 @@ def rotate_pts(pts, r, axis=1, do_transform=0, is_point_flow_data=1, eps=None):
         R = pcl.get_rotation_matrix_from_xyz((0, 0, - r * np.pi / 2))
     elif axis == 0:
         R = pcl.get_rotation_matrix_from_xyz((- r * np.pi / 2, 0, 0))
-
-    #mesh_r = copy.deepcopy(pcl)
-    #mesh_r.rotate(R, center=(0, 0, 0))
-    #pts = np.asarray(mesh_r.points)
 
     h_center = w_center = 0 
     center = np.array([h_center, w_center, 0]).reshape(-1,3)

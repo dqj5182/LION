@@ -1,25 +1,10 @@
 """ to train VAE-encoder with two prior """
 import os
-import time 
 import torch
-import torch.nn.functional as F
-import torch.nn as nn
-import numpy as np
 from loguru import logger
-from torch import optim
-from utils.ema import EMA
-from utils import eval_helper, exp_helper 
-from utils.sr_utils import SpectralNormCalculator
+from utils import exp_helper 
 from utils.checker import *
-from utils.utils import AvgrageMeter 
-from utils import utils
-from torch.optim import Adam as FusedAdam
-from torch.cuda.amp import autocast, GradScaler
 from trainers.train_2prior import Trainer as BaseTrainer 
-from trainers.base_trainer import init_lns_input 
-from utils.data_helper import normalize_point_clouds 
-from utils.vis_helper import visualize_point_clouds_3d
-from utils.eval_helper import compute_NLL_metric 
 CHECKPOINT = int(os.environ.get('CHECKPOINT', 0))
 EVAL_LNS = int(os.environ.get('EVAL_LNS', 0))
 
@@ -41,7 +26,6 @@ class Trainer(BaseTrainer):
     # -- shared method for all model with vae component -- # 
     @torch.no_grad() 
     def eval_nll(self, step, ntest=None, save_file=False):
-        loss_dict = {} 
         cfg = self.cfg 
         if cfg.ddpm.ema:
             self.swap_vae_param_if_need()
@@ -55,11 +39,6 @@ class Trainer(BaseTrainer):
             tag += '-train'
         else:
             data_loader = self.test_loader 
-        gen_pcs, ref_pcs = [], []
-        shape_id_start = 0
-        batch_metric_all = {} 
-        gen_x_lns_list = []
-        lns_input = init_lns_input(self.is_pointflow_data)
         tag_cur = self.cfg.voxel2pts.diffusion_steps[0]
         if 'chair'  in self.cfg.data.cates:
             input_pts = '../exp/0404/nschair/60eeeah_train_l2e-4E4k_vae_adainB5l1E3W8/eval/samples_1415999s1Ha1104diet.pt'

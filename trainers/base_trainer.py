@@ -8,7 +8,6 @@
 import os
 import time
 from abc import ABC, abstractmethod
-from comet_ml import Experiment
 import torch
 import importlib
 import numpy as np
@@ -21,7 +20,6 @@ from utils.checker import *
 from utils.vis_helper import visualize_point_clouds_3d
 from utils.eval_helper import compute_score, get_ref_pt, get_ref_num
 from utils import model_helper, exp_helper, data_helper
-from utils.utils import infer_active_variables 
 from utils.data_helper import normalize_point_clouds
 from utils.eval_helper import compute_NLL_metric
 from utils.utils import AvgrageMeter

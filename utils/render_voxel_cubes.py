@@ -17,7 +17,6 @@ from PIL import Image
 sys.path.append('.')
 import torch  
 from utils._render_mitsuba_cubes import render_cubes2png  
-# from script.paper.vis_mesh.render_mitsuba import reformat_ply 
 def reformat_ply(input, output, r=0, is_point_flow_data=0, 
         ascii=False, write_normal=False, fixed_trimesh=1):
     m = open3d.io.read_triangle_mesh(input)

@@ -7,18 +7,15 @@
 # license agreement from NVIDIA CORPORATION & AFFILIATES is strictly prohibited.
 import torch
 import numpy as np
-import time
 from loguru import logger
 from utils.ema import EMA
 from torch import optim
 from torch.optim import Adam as FusedAdam
-from torch.cuda.amp import autocast, GradScaler
+from torch.cuda.amp import GradScaler
 from utils.sr_utils import SpectralNormCalculator
 from utils import utils
 from utils.vis_helper import visualize_point_clouds_3d
 from utils.diffusion_pvd import DiffusionDiscretized
-from utils.eval_helper import compute_NLL_metric 
-from utils import model_helper, exp_helper, data_helper
 from timeit import default_timer as timer
 from utils.data_helper import normalize_point_clouds
 
@@ -184,8 +181,6 @@ def validate_inspect(latent_shape,
                     points = points - c  # center at 1
                     vis_points = points
                     bound = max(X, Y, Z)*0.5
-                    # logger.info('voxel_size: {}, output_voxel_XYZ: {}, bound: {}',
-                    #    voxel_size, output_voxel_XYZ.shape, bound)
 
                 elif vis_args['is_omap']:
                     vis_points = points * s_pcs[i]  # range before norm
@@ -203,7 +198,6 @@ def validate_inspect(latent_shape,
                                                 **vis_args)
 
                 points = normalize_point_clouds([points])[0]
-                ## print('points', points.shape, points.numpy().min(0), points.numpy().max(0), points[:3])
                 img2 = visualize_point_clouds_3d([points], ['cond_center'],
                                                  **vis_args)
                 img = np.concatenate([img, img2], axis=1)

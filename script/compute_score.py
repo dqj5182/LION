@@ -8,8 +8,6 @@
 import sys
 sys.path.append('.')
 from utils.eval_helper import compute_score 
-# samples = sys.argv[1]
-# ref = sys.argv[2]
 
 samples = './lion_ckpt/unconditional/car/samples.pt'
 ref = './datasets/test_data/ref_val_car.pt'
